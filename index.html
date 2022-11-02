@@ -6,10 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marche ou cèpes</title>
     <meta name="description" content="Ceci est une description">
-    <link rel="stylesheet" href="/assets/css/style.min.css">
-    <script src="/assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <!-- <script src="/assets/js/script.js" defer></script> -->
 </head>
 <body>
-    <h1>Marche ou cèpes</h1>
+    <main>
+        <section id="home" classe="section">
+            <div id="logo_container">
+                LOGO
+            </div>
+            <a href="">
+                <h1>Trouvez notre restaurant ici !</h1>
+            </a>
+            <h2>Qui sommes nous ?</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. <strong>--php--</strong></p>
+            <h2>Adresse :</h2>
+            <p>adresse <strong>--php--</strong></p>
+            <button id="where">Où sommes nous ?</button>
+        </section>
+        <section id="menu" classe="section">
+            <h2>Notre menu</h2>
+            <div id="grid_container">
+                <div id="top_left">
+                    <h3>Entrées</h3>
+                    <p>titre<strong>--php--</strong></p>
+                    <p>description<strong>--php--</strong></p>
+                </div>
+                <div id="top_right">
+                    <h3>Plats</h3>
+                    <p>titre<strong>--php--</strong></p>
+                    <p>description<strong>--php--</strong></p>
+                </div>
+                <div id="bottom_left">
+                    <h3>A partager</h3>
+                    <p>titre<strong>--php--</strong></p>
+                    <p>description<strong>--php--</strong></p>
+                </div>
+                <div id="bottom_right">
+                    <h3>Desserts</h3>
+                    <p>titre<strong>--php--</strong></p>
+                    <p>description<strong>--php--</strong></p>
+                </div>
+            </div>
+        </section>
+        <section id="form" classe="section">
+            <h2>Contactez nous</h2>
+            <form action="/monfichier.php" method="post">
+                <fieldset id="form_grid">
+                    <div id="input_firstname">
+                        <label for="firstname"></label>
+                        <input type="text" name="firstname" placeholder="Votre prénom :">
+                    </div>
+                    <div id="input_lastname">
+                        <label for="lastname"></label>
+                        <input type="text" name="lastname" placeholder="Votre nom :">
+                    </div>
+                    <div id="input_phonenumber">
+                        <label for="phone_number"></label>
+                        <input type="text" name="phone_number" placeholder="Votre n° de télephone :">
+                    </div>
+                    <div id="input_txtarea">
+                        <label for="message"></label>
+                        <input type="text" name="message" placeholder="Votre message :">
+                    </div>
+                    <div id="form_btn">
+                        <button id="form_send">Envoyez !</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
