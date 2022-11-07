@@ -54,21 +54,21 @@
             <h2>Contactez nous</h2>
             <form action="/monfichier.php" method="post">
                 <fieldset id="form_grid">
-                    <div id="input_firstname" class="flex">
+                    <div id="div_firstname" class="flex">
                         <label for="firstname" class="active">Prénom</label>
                         <input type="text" name="firstname" placeholder="Votre prénom :" required>
                     </div>
-                    <div id="input_lastname" class="flex">
-                        <label for="lastname" class="active">Nom</label>
-                        <input type="text" name="lastname" placeholder="Votre nom :" required>
+                    <div id="div_lastname" class="flex">
+                        <label id="label1" for="lastname" class="active">Nom</label>
+                        <input id="input1" type="text" name="lastname" placeholder="Votre nom :" required>
                     </div>
-                    <div id="input_phonenumber" class="flex">
-                        <label for="phone_number" class="active">n° de téléphone</label>
-                        <input type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
+                    <div id="div_phonenumber" class="flex">
+                        <label id="label2" for="phone_number" class="active">n° de téléphone</label>
+                        <input id="input2" type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
                     </div>
-                    <div id="input_txtarea" class="flex">
-                        <label for="message" class="active">Votre message</label>
-                        <input type="text" name="message" placeholder="Votre message :" required>
+                    <div id="div_txtarea" class="flex">
+                        <label id="label3" for="message" class="active">Votre message</label>
+                        <input id="input3" type="text" name="message" placeholder="Votre message :" required>
                     </div>
                     <div id="form_btn">
                         <button id="form_send">Envoyez !</button>
