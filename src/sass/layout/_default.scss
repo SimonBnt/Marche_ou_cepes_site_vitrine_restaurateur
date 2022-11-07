@@ -4,6 +4,42 @@ html {
     body {
         margin: 0;
         min-height: 100vh;
-        // font-family: $font-one;
+        font-family: Garamond, serif;
+        // font-family: Brush Script MT;
+        background-color: #304052;
+        border: solid white 2px;
+        
+        main {
+            text-align: center;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            background-color: #c7d8ec;
+            
+            section.section {
+                border: solid white 2px;
+                border-bottom: 0;
+
+                h1 {
+                    font-size: 2rem;
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    padding-bottom: 0.5rem;
+                }
+
+                h2{
+                    font-size: 1.5rem;
+                    padding-top: 1rem;
+                    padding-bottom: 0.5rem;
+                }
+                h2::before {
+                    content: url(/assets/img/double_line.png);
+                    margin: 0.25rem;
+                }
+                h2::after {
+                    content: url(/assets/img/double_line.png);
+                    margin: 0.25rem;
+                }
+            }
+        }
     }
 }
