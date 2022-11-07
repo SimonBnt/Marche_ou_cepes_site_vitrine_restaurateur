@@ -5,7 +5,7 @@
 }
 div#menu_grid {
     @include grid(repeat(1fr, 2), repeat(1fr, 2));
-
+    
     .padding {
         padding: 1rem;
     }
@@ -29,6 +29,7 @@ div#menu_grid {
     p.align-start{
         text-align: start;
         padding-top: 0.5rem;
+        margin-left: 1rem;
     }
     h3 {
         text-decoration: underline;
