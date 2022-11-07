@@ -1,0 +1,37 @@
+fieldset#form_grid {
+    padding-bottom: 1rem;
+    // @include grid(1fr, repeat(1fr, 4));
+    
+    // #input_firstname {
+    //     grid-row: 1/4;
+    // }
+    // #input_lastname{
+    //     grid-row: 2/4;
+    // }
+    // #input_phonenumber {
+    //     grid-row: 2/4;
+    // }
+    // #input_txtarea {
+    //     grid-row: 3/4;
+    // }
+    // #form_btn {
+    //     grid-row: 4/4;
+    // }
+    .flex{
+        @include flex($justify: center);
+        flex-direction: column;
+
+        label, input {
+            margin-bottom: 0.5rem;
+
+            
+        }
+        label::after {
+            content: " *";
+            color: red;
+        }
+
+    }
+    
+   
+}
