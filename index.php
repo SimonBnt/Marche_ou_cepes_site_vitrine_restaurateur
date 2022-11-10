@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marche ou cèpes</title>
     <meta name="description" content="Ceci est une description">
-    <link rel="stylesheet" href="/assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
     <!-- <script src="/assets/js/script.js" defer></script> -->
 </head>
 <body>
     <main>
         <section id="home" class="section">
             <div id="logo_container">
-                <img id="logo" src="/assets/img/logo.png" alt="Logo">
+                <img id="logo" src="assets/img/logo.png" alt="Logo">
             </div>
             <a href="">
                 <h1>Trouvez notre restaurant ici !</h1>
             </a>
-            <img src="/assets/img/slide-separator_white.png" alt="">
+            <img src="assets/img/slide-separator_white.png" alt="">
             <h2>Qui sommes nous ?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. </p>
             <h2>Adresse</h2>
@@ -52,7 +52,7 @@
         </section>
         <section id="form" class="section">
             <h2>Contactez nous</h2>
-            <form action="/monfichier.php" method="post">
+            <form action="monfichier.php" method="post">
                 <fieldset id="form_grid">
                     <div id="input_firstname" class="flex">
                         <label for="firstname" class="active">Prénom</label>

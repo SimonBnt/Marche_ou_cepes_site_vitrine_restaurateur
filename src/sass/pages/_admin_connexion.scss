@@ -45,6 +45,13 @@ body {
                 border-radius: 5px;
                 background-color: transparent;
                 border: 1px solid;
+
+                &:hover{
+                    background-color: brown;
+                    color: beige;
+                    border: 2px solid black;
+                    cursor: pointer;
+                }
             }
         }
     }
