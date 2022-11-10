@@ -1,29 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- // ---- Metadata ---- // -->
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marche ou cèpes</title>
     <meta name="description" content="Ceci est une description">
+    
+    <title>Marche ou cèpes</title>
+
+    <!-- // ---- Stylesheet ---- // -->
     <link rel="stylesheet" href="/assets/css/styles.min.css">
-    <!-- <script src="/assets/js/script.js" defer></script> -->
+    
+    <!-- // ---- Fontawesome ---- // -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- // ---- ScriptJs ---- // -->
+    <script src="/assets/js/script.js"defer></script>
+    <script src="/assets/js/map.js"defer></script>
+
+    <!-- // ---- link Leaflet ---- // -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+
+    <!-- // ---- scipt Leaflet ---- // -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    
+    
+    <!-- // ---- Favicons ---- // -->
+    
 </head>
 <body>
-    <main>
-        <section id="home" class="section">
-            <div id="logo_container">
-                <img id="logo" src="/assets/img/logo.png" alt="Logo">
+
+    <!-- // ---- Application Header ---- // -->
+
+    <header class="default">
+        
+
+    <!-- // ---- Application Mobile First MenuBurger ---- // -->
+        <div id="burgerMenu_container">
+            <div id="burgerMenu">
+                <a id="closeBtn" href="#" class="close">×</a>
+                <ul>
+                  <li><a href="#home" class="quickMenu">A propos</a></li>
+                  <li><a href="#menu" class="quickMenu">Nos Menus</a></li>
+                  <li><a href="#contact_form" class="quickMenu">Nous contacter</a></li>
+                  <li><a href="#map" class="quickMenu">Où sommes nous ?</a></li>
+                </ul>
+              </div>
+              
+              <div href="#" id="burger_grid">
+                <div id="openBtn" class="burger-icon">
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
             </div>
-            <a href="">
-                <h1>Trouvez notre restaurant ici !</h1>
-            </a>
+        </div>     
+         
+        <div id="navbar_container">
+            
+            <!-- // ---- Application bottom fixed Navbar icons ---- // -->
+        
+            <nav id="navbar">
+                <div>
+                    <a href="#home"><i class="fa-solid fa-house"></i></a>
+                    <a href="#menu"><i class="fa-solid fa-list"></i></a>
+                    <a href="#contact_form"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="#map"><i class="fa-solid fa-map-location"></i></a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- // ---- Application Main ---- // -->
+    
+    <main class="default">
+
+    <!-- // ---- Application Home section ---- // -->
+        
+        <section id="home" class="section">
+            <div id="normalsize_logo_container">
+                <img id="normalsize_logo" src="/assets/img/logo.png" alt="Logo Marche ou cèpes">
+            </div>
+            <h1>Trouvez notre restaurant ici !</h1>
             <img src="/assets/img/slide-separator_white.png" alt="">
             <h2>Qui sommes nous ?</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. </p>
             <h2>Adresse</h2>
             <p id="adresse">7 Rue de la Fontaine Pinot </p>
+            <button id="cta_where">
+                <a href="#map">Nous sommes ici !</a>
+            </button>
         </section>
+
+    <!-- // ---- Application Menu section ---- // -->
+        
         <section id="menu" class="section">
             <h2>Notre menu</h2>
             <img src="/assets/img/slide-separator_white.png" alt="">
@@ -50,25 +122,31 @@
                 </div>
             </div>
         </section>
-        <section id="form" class="section">
-            <h2>Contactez nous</h2>
-            <form action="/monfichier.php" method="post">
+
+    <!-- // ---- Application Contact Form section ---- // -->
+    
+    <section id="contact_form" class="section">
+        <h2>Contactez nous</h2>
+
+        <!-- // ---- Application Contact Form ---- // -->
+
+        <form action="/monfichier.php" method="post">
                 <fieldset id="form_grid">
-                    <div id="input_firstname" class="flex">
+                    <div id="div_firstname" class="labelinput_flex_container">
                         <label for="firstname" class="active">Prénom</label>
                         <input type="text" name="firstname" placeholder="Votre prénom :" required>
                     </div>
-                    <div id="input_lastname" class="flex">
-                        <label for="lastname" class="active">Nom</label>
-                        <input type="text" name="lastname" placeholder="Votre nom :" required>
+                    <div id="div_lastname" class="labelinput_flex_container">
+                        <label id="label1" for="lastname" class="active">Nom</label>
+                        <input id="input1" type="text" name="lastname" placeholder="Votre nom :" required>
                     </div>
-                    <div id="input_phonenumber" class="flex">
-                        <label for="phone_number" class="active">n° de téléphone</label>
-                        <input type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
+                    <div id="div_phonenumber" class="labelinput_flex_container">
+                        <label id="label2" for="phone_number" class="active">n° de téléphone</label>
+                        <input id="input2" type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
                     </div>
-                    <div id="input_txtarea" class="flex">
-                        <label for="message" class="active">Votre message</label>
-                        <input type="text" name="message" placeholder="Votre message :" required>
+                    <div id="div_txtarea" class="labelinput_flex_container">
+                        <label id="label3" for="message" class="active">Votre message</label>
+                        <input id="input3" type="text" name="message" placeholder="Votre message :" required>
                     </div>
                     <div id="form_btn">
                         <button id="form_send">Envoyez !</button>
@@ -76,6 +154,23 @@
                 </fieldset>
             </form>
         </section>
+
+    <!-- // ---- Application Map section ---- // -->
+        
+        <section id="map" class="section">
+
+            <!-- // ---- Application Map ---- // -->
+
+            <div id="map_container">
+                
+            </div>
+        </section>
     </main>
+    
+    <!-- // ---- Application Footer ---- // -->
+    
+    <footer>
+        <span><a href="/mention_légales.html"><p id="legalmention">Mentions légales</p></a></span>
+    </footer>
 </body>
 </html>

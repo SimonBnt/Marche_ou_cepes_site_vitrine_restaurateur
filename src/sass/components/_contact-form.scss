@@ -1,37 +1,43 @@
 fieldset#form_grid {
     padding-bottom: 1rem;
-    // @include grid(1fr, repeat(1fr, 4));
     
-    // #input_firstname {
-    //     grid-row: 1/4;
-    // }
-    // #input_lastname{
-    //     grid-row: 2/4;
-    // }
-    // #input_phonenumber {
-    //     grid-row: 2/4;
-    // }
-    // #input_txtarea {
-    //     grid-row: 3/4;
-    // }
-    // #form_btn {
-    //     grid-row: 4/4;
-    // }
-    .flex{
+    .labelinput_flex_container{
         @include flex($justify: center);
         flex-direction: column;
-
-        label, input {
+        
+        label, div, input {
             margin-bottom: 0.5rem;
-
-            
         }
         label::after {
             content: " *";
             color: red;
         }
-
+        input {
+            border-radius: 0.5rem;
+        }
     }
+}
+
+@include respondTo(desktop) {
+    fieldset#form_grid {
+
+        @include grid(repeat(1fr, 2), repeat(1fr, 4));
     
-   
+        #div_firstname {
+            grid-row: 1/4;
+        }
+        #div_lastname{
+            grid-row: 2/4;
+        }
+        #div_phonenumber {
+            grid-row: 2/4;
+        }
+        #div_txtarea {
+            grid-row: 3/4;
+        }
+        #form_btn {
+            grid-row: 4/4;
+            grid-column: 2/4;
+        }
+    }
 }

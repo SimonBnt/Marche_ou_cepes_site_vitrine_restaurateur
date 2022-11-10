@@ -1,0 +1,28 @@
+div#navbar_container {
+
+    #navbar {
+        border-radius: 0.25rem;
+        background-color: #333;
+        overflow: hidden;
+        position: fixed;
+        bottom: -50px;
+        width: 362px;
+        transition: 0.4s;
+        z-index: 500;
+        
+        a {
+            color: black;
+            padding: 1rem;
+
+            :hover {
+                color: white;
+            }
+
+            i{
+                font-size: xx-large;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+        }
+    }
+}
