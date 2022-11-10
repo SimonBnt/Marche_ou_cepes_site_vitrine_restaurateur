@@ -2,22 +2,23 @@ html {
     scroll-behavior: smooth;
     
     body {
-        margin: 0;
-        min-height: 100vh;
         font-family: Garamond, serif;
-        // font-family: Brush Script MT;
-        background-color: #304052;
-        border: solid white 2px;
+        // background-color: #304052e8 !important;
+        // border: solid white 2px;
         
-        main {
+        .default {
             text-align: center;
             margin-left: 1.5rem;
             margin-right: 1.5rem;
+            z-index: 1;
             background-color: #c7d8ec;
 
+
             section.section {
-                border: solid white 2px;
-                border-bottom: 0;
+                // border-right: solid white 1.5px;
+                // border-left: solid white 1.5px;
+                // border-bottom: solid white 2px;
+                
                 
                 h1 {
                     font-size: 2rem;

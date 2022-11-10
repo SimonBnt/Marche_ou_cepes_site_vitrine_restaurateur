@@ -1,23 +1,30 @@
 #home {
-    border-top: 0;
 
-    img#logo {
-        height: 8rem;
-        width: 8rem;
-        padding: 2rem;
-    }
-    @include respondTo(desktop) {
-        img#logo {
-            height: 14rem;
-            width: 14rem;
+    div#normalsize_logo_container {
+        
+        img#normalsize_logo {
+            height: 8rem;
+            width: 8rem;
             padding: 2rem;
         }
-    }
-    a {
-        color: black;
-        text-decoration: none;
+        @include respondTo(desktop) {
+            img#normalsize_logo {
+                height: 14rem;
+                width: 14rem;
+                padding: 2rem;
+            }
+        }
+        
     }
     p#adresse {
         padding-bottom: 1rem;
+    }
+    #cta_where {
+        margin-bottom: 1rem;
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
     }
 }

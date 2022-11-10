@@ -1,0 +1,10 @@
+section#map {
+  padding: 1rem;
+
+  #map_container {
+    border: solid white;
+    border-radius: 0.5rem;
+    height: 350px;
+    z-index: 250;
+  }
+}

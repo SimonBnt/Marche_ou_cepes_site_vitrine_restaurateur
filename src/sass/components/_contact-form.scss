@@ -1,20 +1,20 @@
 fieldset#form_grid {
     padding-bottom: 1rem;
     
-    .flex{
+    .labelinput_flex_container{
         @include flex($justify: center);
         flex-direction: column;
         
-        label, div {
+        label, div, input {
             margin-bottom: 0.5rem;
-            
-            
         }
         label::after {
             content: " *";
             color: red;
         }
-        
+        input {
+            border-radius: 0.5rem;
+        }
     }
 }
 
