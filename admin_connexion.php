@@ -1,25 +1,25 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 session_start();
-$login=$_POST['login'];
-$pass=$_POST['mdp'];
-$valider=$_POST['valider'];
 $message="";
-if(isset($valider)){
+if(isset($_POST['valider'])){
     try {
-        $pdo= new PDO("mysql:host=localhost;dbname:marche_ou_cepes", "root", "root");
+        $pdo = new PDO('mysql:host=localhost;dbname=Test', 'root', 'root');
     } catch (PDOException $e) {
-        echo $e->getMessage();
+        echo "Erreur : " . $e->getMessage();
     }
-    $res=$pdo->prepare("SELECT * FROM user WHERE login=? and pass=? limit 1");
+    $res=$pdo->prepare("SELECT * FROM users WHERE login=? and password=?");
     $res->setFetchMode(PDO::FETCH_ASSOC);
-    $res->execute(array($login,$pass));
+    $res->execute(array($_POST['login'],$_POST['password']));
     $tab=$res->fetchAll();
     if(count($tab)==0)
         echo "Mauvais Login ou Mot de passe";
         else{
             $_SESSION['autoriser']="oui";
-            header('location:espace_admin');
+            header("location:admin_page.php");
         }
     
 }
@@ -37,9 +37,9 @@ if(isset($valider)){
 
     //         if($login_saisi == $login_par_defaut && $mdp_saisi == $mdp_par_defaut){
     //             $_SESSION['mdp'] = $mdp_saisi;
-    //             header("location: espace_admin.php");
+    //             header("location: admin_page.php");
     //         }else{
-    //             echo 'Votre mdp ou login est incorrect';
+    //             echo 'Votre mot de passe ou login est incorrect';
     //         }
     //     }else{
     //             echo 'Veuillez remplir tous les champs';
@@ -67,12 +67,12 @@ if(isset($valider)){
         </div>
         <div>
             <label class="input-label" type="mot_de_passe">Mot de passe:</label>
-            <input class="input" type="password" name="mdp" ><br>
+            <input class="input" type="password" name="password" ><br>
         </div>
         <div>
             <!-- <input type="checkbox">
             <label for="checkbox">Se souvenir de moi</label> -->
-            <button type="submit" name="valider" >Se connecter</button>
+            <button type="submit" name="valider">Se connecter</button>
         </div>
     </form>
 </div>
