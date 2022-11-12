@@ -1,50 +1,24 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
-$message="";
-if(isset($_POST['valider'])){
+$message = "";
+if (isset($_POST['valider'])) {
+        if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=Test', 'root', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
     } catch (PDOException $e) {
         echo "Erreur : " . $e->getMessage();
     }
-    $res=$pdo->prepare("SELECT * FROM users WHERE login=? and password=?");
+    $res = $pdo->prepare("SELECT * FROM users WHERE login=? and password=?");
     $res->setFetchMode(PDO::FETCH_ASSOC);
-    $res->execute(array($_POST['login'],$_POST['password']));
-    $tab=$res->fetchAll();
-    if(count($tab)==0)
-        echo "Mauvais Login ou Mot de passe";
-        else{
-            $_SESSION['autoriser']="oui";
-            header("location:admin_page.php");
-        }
-    
+    $res->execute(array($_POST['login'], md5($_POST['password'])));
+    $tab = $res->fetchAll();
+    if (count($tab) == 0) {
+    } else {
+        $_SESSION['autoriser'] = "oui";
+        header("location:admin_page.php");
+    }
 }
 
-
-    // session_start();
-
-    // if(isset($_POST['valider'])){
-    //     if(!empty($_POST['login']) && !empty($_POST['mdp'])){
-    //         $login_par_defaut="admin";
-    //         $mdp_par_defaut="admin";
-
-    //         $login_saisi=htmlspecialchars($_POST['login']);
-    //         $mdp_saisi=htmlspecialchars($_POST['mdp']);
-
-    //         if($login_saisi == $login_par_defaut && $mdp_saisi == $mdp_par_defaut){
-    //             $_SESSION['mdp'] = $mdp_saisi;
-    //             header("location: admin_page.php");
-    //         }else{
-    //             echo 'Votre mot de passe ou login est incorrect';
-    //         }
-    //     }else{
-    //             echo 'Veuillez remplir tous les champs';
-    //     }
-    // }
 ?>
 
 <!DOCTYPE html>
@@ -58,24 +32,30 @@ if(isset($_POST['valider'])){
     <title>Connexion Administrateur</title>
 </head>
 
-<body>
-    <div class="form" >
-    <form  method="POST" action="">
-        <div>
-            <label class="input-label" for="identifiant" type="text" >Nom d'utilisateur:</label>
-            <input class="input" type="text" name="login"><br>
-        </div>
-        <div>
-            <label class="input-label" type="mot_de_passe">Mot de passe:</label>
-            <input class="input" type="password" name="password" ><br>
-        </div>
-        <div>
-            <!-- <input type="checkbox">
-            <label for="checkbox">Se souvenir de moi</label> -->
-            <button type="submit" name="valider">Se connecter</button>
-        </div>
-    </form>
-</div>
-</body>
+<body">
+    <img src="assets/img/plat-1.jpg" alt="">
+    <div class="form">
+        <form method="POST" action="">
+            <div>
+                <label class="label-input" for="identifiant" type="text">Login:</label>
+                <input class="input" type="text" name="login" placeholder="Entrée votre login"><br>
+            </div>
+            <hr>
+            <div>
+                <label class="label-input" type="mot_de_passe">Mot de passe:</label>
+                <input class="input" type="password" name="password" placeholder="Entrée votre mot de passe"><br>
+            </div>
+            <hr>
+            <div class="checkbox-submit">
+                <input type="checkbox">
+                <label for="checkbox">Se souvenir de moi</label>
+                <button type="submit" name="valider">Se connecter</button>
+            </div>
+            <?php if(!empty($message)) {?>
+            <div class="erreur"><?php echo $message  ?></div>
+            <?php } ?>  
+        </form>
+    </div>
+    </body>
 
 </html>

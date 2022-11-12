@@ -6,7 +6,7 @@ html {
         min-height: 100vh;
         font-family: Garamond, serif;
         // font-family: Brush Script MT;
-        background-color: #304052;
+        // background-color: #304052;
         border: solid white 2px;
         
         main {
@@ -32,11 +32,11 @@ html {
                     padding-bottom: 0.5rem;
                 }
                 &::before {
-                    content: url(assets/img/double_line.png);
+                    content: url(/assets/img/double_line.png);
                     margin: 0.25rem;
                 }
                 &::after {
-                    content: url(assets/img/double_line.png);
+                    content: url(/assets/img/double_line.png);
                     margin: 0.25rem;
                 }
             }
