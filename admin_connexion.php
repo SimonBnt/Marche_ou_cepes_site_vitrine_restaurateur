@@ -2,7 +2,6 @@
 session_start();
 $message = "";
 if (isset($_POST['valider'])) {
-    $_SESSION['connecter'] = true;
     if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
@@ -15,7 +14,7 @@ if (isset($_POST['valider'])) {
     $tab = $res->fetchAll();
     if (count($tab) == 0) {
     } else {
-        $_SESSION['autoriser'] = "oui";
+        $_SESSION['connecter'] = true;
         header("location:admin_page.php");
     }
 }
