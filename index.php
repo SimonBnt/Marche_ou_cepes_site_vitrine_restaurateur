@@ -26,7 +26,7 @@
         </section>
         <section id="menu" class="section">
             <h2>Notre menu</h2>
-            <img src="/assets/img/slide-separator_white.png" alt="">
+            <img src="assets/img/slide-separator_white.png" alt="">
             <div id="menu_grid" >
                 <div id="top_left" class="padding">
                     <h3>Entrées</h3>

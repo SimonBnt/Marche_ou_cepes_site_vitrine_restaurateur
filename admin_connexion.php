@@ -2,7 +2,8 @@
 session_start();
 $message = "";
 if (isset($_POST['valider'])) {
-        if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
+    $_SESSION['connecter'] = true;
+    if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
     } catch (PDOException $e) {
@@ -32,8 +33,8 @@ if (isset($_POST['valider'])) {
     <title>Connexion Administrateur</title>
 </head>
 
-<body">
-    <img src="assets/img/plat-1.jpg" alt="">
+<body class="body">
+    <img class="background_admin" src="assets/img/plat-1.jpg" alt="image arrière plan">
     <div class="form">
         <form method="POST" action="">
             <div>
@@ -51,9 +52,9 @@ if (isset($_POST['valider'])) {
                 <label for="checkbox">Se souvenir de moi</label>
                 <button type="submit" name="valider">Se connecter</button>
             </div>
-            <?php if(!empty($message)) {?>
-            <div class="erreur"><?php echo $message  ?></div>
-            <?php } ?>  
+            <?php if (!empty($message)) { ?>
+                <div class="erreur"><?php echo $message  ?></div>
+            <?php } ?>
         </form>
     </div>
     </body>
