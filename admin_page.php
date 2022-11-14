@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if ($_SESSION['connecter'] != true) {
+    if ($_SESSION['connected'] != true) {
         header('location:admin_connexion.php');
     }
 ?>

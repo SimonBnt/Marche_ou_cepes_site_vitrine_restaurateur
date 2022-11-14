@@ -3,7 +3,20 @@
     font-size: 1.2em;
     background-color: transparent !important;
 
+    h1 {
+        width: max-content;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        font-size: 1.5em !important;
+        font-weight: 100;
+        border-bottom: 1px solid;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+
     .background_admin {
+        position: absolute;
         width: 100vw;
         height: 99vh;
         filter: opacity(0.8);
@@ -11,14 +24,15 @@
         object-position: center;
         background-color: white;
     }
-        
-    
+
     .form {
         background-color: rgba(255, 228, 196, 0.654);
         border: 2px solid rgb(36, 26, 98);
-        border-radius: 5px;
+        box-shadow: 0px 0px 26px 1px rgba(0,0,0,0.7);
+        border-radius: 10px;
         margin: 5px;
         padding: 10px;
+        padding-top: 20px;
         display: flex;
         flex-direction: column;
         align-self: center;
@@ -26,21 +40,23 @@
         align-items: center;
         position: absolute;
         top: 40%;
-        left: 50%;
+        left: 49%;
         transform: translate(-50%, -50%);
-
-        &::before {
-            content: "Connexion Administrateur";
-            font-size: 30px;
-            margin-bottom: 50px;
-            border-bottom: 1px solid;
-            color: #000000;
-
-        }
 
         hr {
             margin: 10px;
             background-color: black;
+        }
+
+        .login-div {
+            margin: 0 10px;
+        }
+        .password-div{
+            margin: 0 10px;
+        }
+
+        .checkbox-submit{
+            margin: 0 10px;
         }
 
         div {
@@ -49,6 +65,8 @@
             margin-bottom: 5px;
             display: flex;
             align-items: center;
+
+
 
             .label-input {
 
@@ -86,7 +104,7 @@
 
         }
 
-        .erreur {
+        .errors {
             width: max-content;
             height: max-content;
             position: relative;
@@ -100,3 +118,18 @@
         }
     }
 }
+
+@media screen and (max-width:600px){
+    // Ecrans dont la taille maximum est de 600px (Smartphone)
+    .body{
+
+        h1{
+            font-size: 1em;
+        }
+        
+        .form{
+            margin-right: 15px;
+            padding-right: 10px;
+        }
+    }
+ } 
