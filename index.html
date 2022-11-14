@@ -31,11 +31,19 @@
     
 </head>
 <body>
+        
+        <!-- // ---- Application Navbar ---- // -->
+    
+    <nav id="navbar">
+            <a href="#home"><i class="fa-solid fa-house"></i>Acceuil</a>
+            <a href="#menu"><i class="fa-solid fa-list"></i>Menu</a>
+            <a href="#contact_form"><i class="fa-solid fa-envelope"></i>Contact</a>
+            <a href="#map"><i class="fa-solid fa-map-location"></i>Adresse</a>
+    </nav>
 
     <!-- // ---- Application Header ---- // -->
 
     <header class="default">
-        
 
     <!-- // ---- Application Mobile First MenuBurger ---- // -->
         <div id="burgerMenu_container">
@@ -58,19 +66,6 @@
             </div>
         </div>     
          
-        <div id="navbar_container">
-            
-            <!-- // ---- Application bottom fixed Navbar icons ---- // -->
-        
-            <nav id="navbar">
-                <div>
-                    <a href="#home"><i class="fa-solid fa-house"></i></a>
-                    <a href="#menu"><i class="fa-solid fa-list"></i></a>
-                    <a href="#contact_form"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#map"><i class="fa-solid fa-map-location"></i></a>
-                </div>
-            </nav>
-        </div>
     </header>
     
     <!-- // ---- Application Main ---- // -->
@@ -83,10 +78,10 @@
             <div id="normalsize_logo_container">
                 <img id="normalsize_logo" src="/assets/img/logo.png" alt="Logo Marche ou cèpes">
             </div>
-            <h1>Trouvez notre restaurant ici !</h1>
+            <h1>Venez gouter nos spécialités à base champignon !</h1>
             <img src="/assets/img/slide-separator_white.png" alt="">
             <h2>Qui sommes nous ?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. </p>
+            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. </p>
             <h2>Adresse</h2>
             <p id="adresse">7 Rue de la Fontaine Pinot </p>
             <button id="cta_where">
@@ -102,23 +97,31 @@
             <div id="menu_grid" >
                 <div id="top_left" class="padding">
                     <h3>Entrées</h3>
-                    <p class="align-start">titre</p>
-                    <p class="align-start">description</p>
+                    <div id="dishes">
+                        <p class="align-start">titre</p>
+                        <p class="align-start">description</p>
+                    </div>
                 </div>
                 <div id="top_right" class="padding">
                     <h3>Plats</h3>
-                    <p class="align-start">titre</p>
-                    <p class="align-start">description</p>
+                    <div id="dishes">
+                        <p class="align-start">titre</p>
+                        <p class="align-start">description</p>
+                    </div>
                 </div>
                 <div id="bottom_left" class="padding">
                     <h3>A partager</h3>
-                    <p class="align-start">titre</p>
-                    <p class="align-start">description</p>
+                    <div id="dishes">
+                        <p class="align-start">titre</p>
+                        <p class="align-start">description</p>
+                    </div>
                 </div>
                 <div id="bottom_right" class="padding">
                     <h3>Desserts</h3>
-                    <p class="align-start">titre</p>
-                    <p class="align-start">description</p>
+                    <div id="dishes">
+                        <p class="align-start">titre</p>
+                        <p class="align-start">description</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -146,7 +149,7 @@
                     </div>
                     <div id="div_txtarea" class="labelinput_flex_container">
                         <label id="label3" for="message" class="active">Votre message</label>
-                        <input id="input3" type="text" name="message" placeholder="Votre message :" required>
+                        <textarea id="textarea" type="text" name="message" required></textarea>
                     </div>
                     <div id="form_btn">
                         <button id="form_send">Envoyez !</button>
@@ -169,8 +172,8 @@
     
     <!-- // ---- Application Footer ---- // -->
     
-    <footer>
-        <span><a href="/mention_légales.html"><p id="legalmention">Mentions légales</p></a></span>
+    <footer class="default">
+        <span><a href="/mention_légales.html"><p id="legalmention">@Mentions légales</p></a></span>
     </footer>
 </body>
 </html>

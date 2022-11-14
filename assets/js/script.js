@@ -19,15 +19,12 @@ function closeBurgerMenu() {
 
 // ---- Bottom fixed Navbar script ---- //
 
-let previousScrollPosition = window.pageYOffset;
-let currentScrollPosition = window.pageYOffset;
+// let previousScrollPosition = window.pageYOffset;
+// let currentScrollPosition = window.pageYOffset;
 
-window.onscroll = function() {
-  if (previousScrollPosition > currentScrollPosition) {
-    navbar.style.bottom = "-50px";
-    }
-    navbar.style.bottom = "0";
-} 
-
-
-// ---- Form validation script ---- //
+// window.onscroll = function() {
+//   if (previousScrollPosition > currentScrollPosition) {
+//     navbar.style.bottom = "-100px";
+//     }
+//     navbar.style.bottom = "0";
+// }

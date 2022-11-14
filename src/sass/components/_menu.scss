@@ -1,45 +1,74 @@
 #menu {
+    @include flex($justify: center);
+    flex-direction: column;
+    align-items: center;
+
     h2 {
-        padding: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+
+        @include respondTo(sm) {
+            font-size: 2rem;
+        }
+        
+        @include respondTo(md) {
+            font-size: 2.5rem;
+        }
     }
+
     div#menu_grid {
+        margin-bottom: 4rem;
         @include grid(repeat(1fr, 2), repeat(1fr, 2));
         
         .padding {
             padding: 1rem;
+            border: solid black 1px;
         }
+
         #top_left {
             grid-column: 1/2;
             grid-row: 1/2;
-            
         }
+
         #top_right {
             grid-column: 2/2;
             grid-row: 1/2;
         }
+
         #bottom_left {
             grid-column: 1/2;
             grid-row: 2/2;
         }
+        
         #bottom_right {
             grid-column: 2/2;
             grid-row: 2/2;
         }
+
         p.align-start{
             text-align: start;
             padding-top: 0.5rem;
-            margin-left: 1rem;
-        }
-        h3 {
-            text-decoration: underline;
-        }
-        
-    }
-}
+            
+            @include respondTo(sm) {
+                margin-right: 12rem;
+            }
 
-@include respondTo(desktop) {
-    
-    .align-start {
-        padding-left: 12rem;
+            @include respondTo(md) {
+                padding-left: 6rem;
+            }
+        }
+
+        h3 {
+            margin-bottom: 1rem;
+            text-decoration: underline;
+
+            @include respondTo(sm) {
+                font-size: 1.5rem;
+            }
+        }
+
+        #dishes {
+            border: solid black 1px;
+        }
     }
 }

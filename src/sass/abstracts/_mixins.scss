@@ -12,17 +12,17 @@
 }
 
 @mixin respondTo($breakpoint) {
-    @if ($breakpoint == mobile) {
-        @media (min-width: 321px) {
-            @content;
-        }
-    }
-    @if ($breakpoint == tablette) {
+    @if ($breakpoint == sm) {
         @media (min-width: 768px) {
             @content;
         }
     }
-    @if ($breakpoint == desktop) {
+    @if ($breakpoint == md) {
+        @media (min-width: 1025px) {
+            @content;
+        }
+    }
+    @if ($breakpoint == lg) {
         @media (min-width: 1224px) {
             @content;
         }

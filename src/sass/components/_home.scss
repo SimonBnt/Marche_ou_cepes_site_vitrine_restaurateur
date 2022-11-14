@@ -1,26 +1,86 @@
 #home {
+    @include flex($justify: center);
+    flex-direction: column;
+    align-items: center;
+    
+    @include respondTo(sm) {
+        height: 80vh;
+    }
+    
+    @include respondTo(md) {
+        height: 100vh;
+    }
 
     div#normalsize_logo_container {
         
         img#normalsize_logo {
             height: 8rem;
             width: 8rem;
-            padding: 2rem;
-        }
-        @include respondTo(desktop) {
-            img#normalsize_logo {
-                height: 14rem;
-                width: 14rem;
-                padding: 2rem;
+            margin-top: 1rem;
+            margin-bottom: 4rem;
+
+            @include respondTo(sm) {
+                    height: 14rem;
+                    width: 14rem;
+            }
+            @include respondTo(md) {
+                    height: 18rem;
+                    width: 18rem;
             }
         }
-        
     }
+
+    h1 {
+        font-size: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        padding-bottom: 0.5rem;
+
+        @include respondTo(sm) {
+            font-size: 3rem;
+        }
+
+        @include respondTo(md) {
+            font-size: 3.5rem;
+        }
+    }
+
+    h2{
+        font-size: 1.5rem;
+        padding-top: 1rem;
+        padding-bottom: 0.5rem;
+
+        @include respondTo(sm) {
+            font-size: 2rem;
+        }
+    
+        @include respondTo(md) {
+            font-size: 2.5rem;
+        }
+    }
+
+    p#bio {
+        padding: 0 2rem 0 2rem;
+
+        @include respondTo(sm) {
+            padding: 0 8rem 0 8rem;
+        }
+
+        @include respondTo(md) {
+            padding: 0 18rem 0 18rem;
+        }
+    }
+
     p#adresse {
         padding-bottom: 1rem;
     }
+
     #cta_where {
-        margin-bottom: 1rem;
+        margin: 1rem 0 1.5rem 0;
+
+    @include respondTo(sm) {
+        font-size: 1.5rem;
+    }
 
         a {
             color: black;

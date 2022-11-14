@@ -3,35 +3,16 @@ html {
     
     body {
         font-family: Garamond, serif;
-        // background-color: #304052e8 !important;
-        // border: solid white 2px;
+        height: 200vh;
         
         .default {
             text-align: center;
-            margin-left: 1.5rem;
-            margin-right: 1.5rem;
             z-index: 1;
-            background-color: #c7d8ec;
-
 
             section.section {
-                // border-right: solid white 1.5px;
-                // border-left: solid white 1.5px;
-                // border-bottom: solid white 2px;
+                border: solid black 1px;
+                margin-bottom: 2rem;
                 
-                
-                h1 {
-                    font-size: 2rem;
-                    margin-left: 1rem;
-                    margin-right: 1rem;
-                    padding-bottom: 0.5rem;
-                }
-                
-                h2{
-                    font-size: 1.5rem;
-                    padding-top: 1rem;
-                    padding-bottom: 0.5rem;
-                }
                 h2::before {
                     content: url(/assets/img/double_line.png);
                     margin: 0.25rem;
@@ -44,10 +25,3 @@ html {
         }
     }
 }
-
-// @include respondTo(desktop) {
-//     main {
-//         margin-left: 4rem;
-//         margin-right: 4rem;
-//     }
-// }
