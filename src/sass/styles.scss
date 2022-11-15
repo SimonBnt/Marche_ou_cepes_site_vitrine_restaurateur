@@ -1,9 +1,9 @@
-@import "layout/default", "layout/header", "layout/main", "layout/footer";
+@import "abstracts/variables", "abstracts/mixins";
 
 @import "base/reset";
 
-@import "abstracts/variables", "abstracts/mixins";
-
-@import "components/buttons", "components/contact-form", "components/home", "components/menu", "components/map"; 
+@import "layout/default", "layout/header", "layout/main", "layout/footer";
 
 @import "pages/admin_connexion", "pages/user_page", "pages/admin_page";
+
+@import "components/buttons", "components/contact-form", "components/home", "components/menu", "components/map"; 
