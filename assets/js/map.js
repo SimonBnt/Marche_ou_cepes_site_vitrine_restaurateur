@@ -4,9 +4,9 @@
 
 let frenchCity = {
     "Paris": {"lat": 48.852969, "lon": 2.349903} , 
-    // "Brest": {"lat": 48.383 , "lon": -4.500 },
-    // "Quimper": {"lat": 48.000, "lon": -4.100},
-    // "Bayonne": {"lat": 43.500, "lon": -1.467},
+    "Brest": {"lat": 48.383 , "lon": -4.500 },
+    "Quimper": {"lat": 48.000, "lon": -4.100},
+    "Bayonne": {"lat": 43.500, "lon": -1.467},
     "Limoges": {"lat": 45.836, "lon": 1.264},
     "Marche ou cèpes": {"lat": 45.823, "lon": 1.266}
 }

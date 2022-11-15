@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- // ---- ScriptJs ---- // -->
-    <script src="/assets/js/script.js"defer></script>
+    <script src="/assets/js/script.js" type="module" defer></script>
     <script src="/assets/js/map.js"defer></script>
 
     <!-- // ---- link Leaflet ---- // -->
@@ -137,18 +137,18 @@
                 <fieldset id="form_grid">
                     <div id="div_firstname" class="labelinput_flex_container">
                         <label for="firstname" class="active">Prénom</label>
-                        <input type="text" name="firstname" placeholder="Votre prénom :" required>
+                        <input id="firstname" type="text" name="firstname" placeholder="Votre prénom :" required>
                     </div>
                     <div id="div_lastname" class="labelinput_flex_container">
-                        <label id="label1" for="lastname" class="active">Nom</label>
-                        <input id="input1" type="text" name="lastname" placeholder="Votre nom :" required>
+                        <label for="lastname" class="active">Nom</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Votre nom :" required>
                     </div>
                     <div id="div_phonenumber" class="labelinput_flex_container">
-                        <label id="label2" for="phone_number" class="active">n° de téléphone</label>
-                        <input id="input2" type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
+                        <label for="phone_number" class="active">n° de téléphone</label>
+                        <input id="phonenumber" type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
                     </div>
                     <div id="div_txtarea" class="labelinput_flex_container">
-                        <label id="label3" for="message" class="active">Votre message</label>
+                        <label for="message" class="active">Votre message</label>
                         <textarea id="textarea" type="text" name="message" required></textarea>
                     </div>
                     <div id="form_btn">
@@ -173,7 +173,7 @@
     <!-- // ---- Application Footer ---- // -->
     
     <footer class="default">
-        <span><a href="/mention_légales.html"><p id="legalmention">@Mentions légales</p></a></span>
+        <span><a href="/mention_legales.html"><p id="legalmention">@Mentions légales</p></a></span>
     </footer>
 </body>
 </html>

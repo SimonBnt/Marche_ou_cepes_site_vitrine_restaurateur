@@ -16,15 +16,3 @@ function openBurgerMenu() {
 function closeBurgerMenu() {
     burgerMenu.classList.remove("active");
 }
-
-// ---- Bottom fixed Navbar script ---- //
-
-// let previousScrollPosition = window.pageYOffset;
-// let currentScrollPosition = window.pageYOffset;
-
-// window.onscroll = function() {
-//   if (previousScrollPosition > currentScrollPosition) {
-//     navbar.style.bottom = "-100px";
-//     }
-//     navbar.style.bottom = "0";
-// }
