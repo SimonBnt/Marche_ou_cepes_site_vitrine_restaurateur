@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- // ---- ScriptJs ---- // -->
-    <script src="/assets/js/script.js" type="module" defer></script>
     <script src="/assets/js/map.js"defer></script>
+    <script src="/assets/js/formValidation.js" defer></script>
+    <script src="/assets/js/script.js" defer></script>
 
     <!-- // ---- link Leaflet ---- // -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
@@ -194,26 +195,31 @@
 
         <!-- // ---- Application Contact Form ---- // -->
 
-        <form action="/monfichier.php" method="post">
+        <form id="form" action="/monfichier.php" method="post">
                 <fieldset id="form_grid">
                     <div id="div_firstname" class="labelinput_flex_container">
-                        <label for="firstname" class="active">Prénom</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Votre prénom :" required>
+                        <label for="firstname">Prénom</label>
+                        <span id="firstname-error"></span>
+                        <input id="firstname" type="text" name="firstname" placeholder="Votre prénom :" onkeyup="validateFirstName()" required>
                     </div>
                     <div id="div_lastname" class="labelinput_flex_container">
-                        <label for="lastname" class="active">Nom</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Votre nom :" required>
+                        <label for="lastname">Nom</label>
+                        <span id="lastname-error"></span>
+                        <input id="lastname" type="text" name="lastname" placeholder="Votre nom :" onkeyup="validateLastName()" required>
                     </div>
                     <div id="div_phonenumber" class="labelinput_flex_container">
-                        <label for="phone_number" class="active">n° de téléphone</label>
-                        <input id="phonenumber" type="text" name="phone_number" placeholder="Votre n° de télephone :" required>
+                        <label for="phone_number">n° de téléphone</label>
+                        <span id="phone-error"></span>
+                        <input id="phonenumber" type="text" name="phone_number" placeholder="Votre n° de télephone :" onkeyup="validateNumber()" required>
                     </div>
                     <div id="div_txtarea" class="labelinput_flex_container">
-                        <label for="message" class="active">Votre message</label>
-                        <textarea id="textarea" type="text" name="message" placeholder="Votre message :" required></textarea>
+                        <label for="message">Votre message</label>
+                        <span id="message-error"></span>
+                        <textarea id="textarea" type="text" name="message" placeholder="Votre message :" onkeyup="validateMessage()" required></textarea>
                     </div>
                     <div id="form_btn">
-                        <button id="form_send">Envoyez !</button>
+                        <button type="submit" id="form_send">Envoyez !</button>
+                        <p id="submit-error"></p>
                     </div>
                 </fieldset>
             </form>
