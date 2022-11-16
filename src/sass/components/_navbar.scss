@@ -1,6 +1,5 @@
 #navbar {
     @include flex($justify: center);
-    border-radius: 0.25rem;
     background-color: #333;
     position: fixed;
     bottom: 0;
