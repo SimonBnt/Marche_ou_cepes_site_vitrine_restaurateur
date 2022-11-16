@@ -20,7 +20,7 @@
     
 
     div#dishe_container {
-
+        
         @include respondTo(sm) {
             @include grid(1fr 1fr, 1fr 1fr);
         }

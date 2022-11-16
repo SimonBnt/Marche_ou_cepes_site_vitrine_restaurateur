@@ -5,7 +5,7 @@
     height: 100vh;
     
     @include respondTo(sm) {
-        height: 80vh;
+        height: 100vh;
     }
     
     @include respondTo(md) {
