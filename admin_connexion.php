@@ -1,10 +1,11 @@
 <?php
 session_start();
+$_SESSION['AdminName']= $tab[0]['login'];
 $message = "";
 if (isset($_POST['submit'])) {
     if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=Marche_ou_cèpes', 'root', 'root');
     } catch (PDOException $e) {
         echo "Error : " . $e->getMessage();
     }
