@@ -33,12 +33,12 @@ if (isset($_POST['submit'])) {
     <title>Connexion Administrateur</title>
 </head>
 
-<body class="body">
+<body id="body">
     <img class="background_admin" src="assets/img/plat-1.jpg" alt="image d'arrière plan représentant un plan à base de champignons">
     <div class="form">
         <form method="POST" action="">
             <div>
-                <h1>Connexion Administrateur</h1>
+                <h1 id="conn-admin">Connexion Administrateur</h1>
             </div>
             <div class="login-div">
                 <label class="label-input" for="identifiant" type="text">Login:</label>

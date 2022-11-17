@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 session_start();
 if ($_SESSION['connected'] != true) {
@@ -23,21 +20,20 @@ if ($_SESSION['connected'] != true) {
 </head>
 
 <body class="body">
-    <h1>Bienvenue sur la page Administrateur
-    </h1>
+    <h1 id="h1-admin">Bienvenue sur la page Administrateur</h1>
     <div class="log-out">
         <a class="btn-logout" href="admin_deconnexion.php">Se déconnecter</a>
     </div><br><br>
     <div>
-        <p>Sur cette page il vous est possible de voir les contenus modifiables de votre site, et d'y apportées des modifications</p>
+        <p id="paragraph-admin">Sur cette page il vous est possible de voir les contenus modifiables de votre site, et d'y apportées des modifications</p>
     </div>
     <hr>
-    <div>
-        <textarea name="bio" id="bio" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut distinctio, sequi dolor autem modi aliquid praesentium! Assumenda ad dignissimos quasi.</textarea>
+    <div id="div-bio-admin">
+        <p id="bio-admin">BIO A MODIFIER</p>
         <button>Changer</button>
     </div>
-    <div>
-        <textarea name="address" id="address" cols="30" rows="10">Lorem ipsum dolor sit amet consectetur adipisicing elit.</textarea>
+    <div id="div-address-admin">
+        <p id="address-admin">ADRESSE ET CONTACT A MODIFIER</p>
         <button>Changer</button>
     </div>
     <hr>
