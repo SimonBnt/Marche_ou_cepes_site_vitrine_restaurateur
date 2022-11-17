@@ -29,12 +29,12 @@ if ($_SESSION['connected'] != true) {
     </div>
     <hr>
     <div id="div-bio-admin">
-        <p id="bio-admin">BIO A MODIFIER</p>
-        <button>Changer</button>
+        <p id="bio-admin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, sed?</p>
+        <button id="change_bio">Changer</button>
     </div>
     <div id="div-address-admin">
-        <p id="address-admin">ADRESSE ET MAIL A MODIFIER</p>
-        <button>Changer</button>
+        <p id="address-admin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, iure.</p>
+        <button id="change_address">Changer</button>
     </div>
     <hr>
 </body>
