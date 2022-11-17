@@ -33,7 +33,7 @@ if ($_SESSION['connected'] != true) {
         <button>Changer</button>
     </div>
     <div id="div-address-admin">
-        <p id="address-admin">ADRESSE ET CONTACT A MODIFIER</p>
+        <p id="address-admin">ADRESSE ET MAIL A MODIFIER</p>
         <button>Changer</button>
     </div>
     <hr>
