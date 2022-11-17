@@ -18,7 +18,7 @@
         Propriétaire du site : Le Client - Contact : marcheoucepes87@wanadoo.fr 05 55 02 10 23 - Adresse : 7 rue de la Fontaine Pinot.
     </p>
     <p>
-        Identification de l'entreprise : SARL Le Client au capital social de 1000€ - SIREN : 123 123 123 12345 - RCS ou RM : - Adresse postale : 7 rue de la Fontaine Pinot - [Consignes : ajoutez ici le lien hypertexte vers la page de vos conditions générales de vente si vous en avez une]
+        Identification de l'entreprise : SARL Le Client au capital social de 1000€ - SIREN : 123 123 123 12345 - RCS ou RM : - Adresse postale : 7 rue de la Fontaine Pinot -
     </p>
     <p>
         Directeur de la publication : Le Client - Contact : Le client.
@@ -68,7 +68,7 @@
         Conformément aux dispositions de la loi 78-17 du 6 janvier 1978 modifiée, l’utilisateur du site https://www.marcheoucepes.fr dispose d’un droit d’accès, de modification et de suppression des informations collectées. Pour exercer ce droit, envoyez un message à notre Délégué à la Protection des Données : Délégué à la protection des données - .
     </p>
     <p>
-        Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre https://www.marcheoucepes.fr/Confidentialité. [Consignes : ajoutez ici le lien hypertexte vers votre politique de confidentialité]
+        Pour plus d'informations sur la façon dont nous traitons vos données (type de données, finalité, destinataire...), lisez notre https://www.marcheoucepes.fr/Confidentialité.
 
     </p>
 
@@ -89,7 +89,7 @@
         Les cookies sont enregistrés pour une durée maximale de 3 mois.
     </p>
     <p>
-        Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre https://www.marcheoucepes.fr/Confidentialité. [Consignes : ajoutez ici le lien hypertexte vers votre politique de confidentialité ou vers votre politique de cookies si vous en avez une (c'est le cas si vous utilisez Complianz)]
+        Pour plus d'informations sur la façon dont nous faisons usage des cookies, lisez notre https://www.marcheoucepes.fr/Confidentialité. 
     </p>
 
     <h2>6 - Droit applicable et attribution de juridiction.</h2>
