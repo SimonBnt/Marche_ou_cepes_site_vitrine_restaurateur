@@ -5,16 +5,16 @@
     align-items: center;
     
     h2 {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
+        font-size: 2rem;
+        margin: 1rem 0 2rem 0;
         color: white;
         
         @include respondTo(sm) {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
         
         @include respondTo(md) {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
     }
     
@@ -22,13 +22,13 @@
         margin-left: 1rem;
         margin-right: 1rem;
         margin-bottom: 4rem;
-        @include respondTo(sm) {
-            width: 768px;
-        }
+        // @include respondTo(sm) {
+        //     width: 768px;
+        // }
         
-        @include respondTo(md) {
-            width: 1200px;
-        }
+        // @include respondTo(md) {
+        //     width: 1200px;
+        // }
         fieldset#form_grid {
             border: solid black 1px;
             background-color: white;
@@ -79,20 +79,21 @@
 
                 label {
                     margin-bottom: 0.5rem;
+                    font-size: 1.25rem;
 
                     @include respondTo(sm) {
                         font-size: 1.5rem;
                     }
                     
                     @include respondTo(md) {
-                        font-size: 1.5rem;
+                        font-size: 1.75rem;
                     }
                 }
 
-                // label::after {
-                //     content: " *";
-                //     color: red;
-                // }
+                label::after {
+                    content: " *";
+                    color: red;
+                }
 
                 input {
                     padding: 0.25rem;
@@ -153,10 +154,10 @@
                 
                 #form_send {
                     background-color: #304052;
-                    color: white;
+                    color: #F5BB65;
                     margin-top: 1rem;
                     padding: 1rem;
-                    border-radius: 0.25rem;
+                    border-radius: 0.5rem;
 
                     @include respondTo(sm) {
                         font-size: 1.5rem;

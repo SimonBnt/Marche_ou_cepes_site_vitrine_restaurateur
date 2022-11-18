@@ -1,24 +1,25 @@
 #home {
+    color: #293747;
     @include flex($justify: center);
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    // height: 100vh;
     
-    @include respondTo(sm) {
-        height: 100vh;
-    }
+    // @include respondTo(sm) {
+    //     height: 100vh;
+    // }
     
-    @include respondTo(md) {
-        height: 100vh;
-    }
+    // @include respondTo(md) {
+    //     height: 100vh;
+    // }
 
     div#normalsize_logo_container {
         
         img#normalsize_logo {
             height: 8rem;
             width: 8rem;
-            margin-top: 1rem;
-            margin-bottom: 4rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
 
             @include respondTo(sm) {
                     height: 14rem;
@@ -32,59 +33,79 @@
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
         margin-left: 2rem;
         margin-right: 2rem;
-        padding-bottom: 0.5rem;
+        padding-bottom: 2rem;
 
         @include respondTo(sm) {
-            font-size: 3rem;
+            font-size: 3.5rem;
         }
 
         @include respondTo(md) {
-            font-size: 3.5rem;
+            font-size: 4rem;
         }
     }
 
     h2{
-        font-size: 1.5rem;
-        padding-top: 1rem;
-        padding-bottom: 0.5rem;
+        font-size: 2rem;
+        padding-bottom: 2rem;
 
         @include respondTo(sm) {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
     
         @include respondTo(md) {
-            font-size: 2.5rem;
+            font-size: 3rem;
         }
     }
 
     p#bio {
-        padding: 0 2rem 0 2rem;
+        font-size: 1.25rem;
+        padding: 0 2rem 2rem 2rem;
 
         @include respondTo(sm) {
-            padding: 0 8rem 0 8rem;
+            padding: 0 8rem 2rem 8rem;
+            font-size: 1.75rem;
         }
 
         @include respondTo(md) {
-            padding: 0 18rem 0 18rem;
+            padding: 0 18rem 2rem 18rem;
+            font-size: 2.25rem;
         }
     }
 
     p#adresse {
+        font-size: 1.25rem;
         padding-bottom: 1rem;
+
+        @include respondTo(sm) {
+            font-size: 1.75rem;
+            // padding: 0 8rem 0 8rem;
+        }
+
+        @include respondTo(md) {
+            font-size: 2.25rem;
+            // padding: 0 18rem 0 18rem;
+        }
     }
 
-    #cta_where {
-        margin: 1rem 0 1.5rem 0;
+    #cta {
+        background-color: #304052;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-bottom: 2rem;
 
-    @include respondTo(sm) {
-        font-size: 1.5rem;
-    }
+        @include respondTo(sm) {
+            font-size: 1.5rem;
+        }
+
+        @include respondTo(sm) {
+            font-size: 1.5rem;
+        }
 
         a {
-            color: black;
+            color: #F5BB65;
             text-decoration: none;
         }
     }

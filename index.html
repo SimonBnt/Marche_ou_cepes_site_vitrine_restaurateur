@@ -12,6 +12,11 @@
 
     <!-- // ---- Stylesheet ---- // -->
     <link rel="stylesheet" href="/assets/css/styles.min.css">
+
+    <!-- // ---- Web font ---- // -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     
     <!-- // ---- Fontawesome ---- // -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -36,6 +41,7 @@
         <!-- // ---- Application Navbar ---- // -->
     
     <nav id="navbar">
+            <p id="welcome">Bienvenu chez Marche ou Cèpes | Terroir, champignons et tradition </p>
             <a href="#home"><i class="fa-solid fa-house"></i>Acceuil</a>
             <a href="#menu"><i class="fa-solid fa-list"></i>Menu</a>
             <a href="#contact_form"><i class="fa-solid fa-envelope"></i>Contact</a>
@@ -45,6 +51,8 @@
     <!-- // ---- Application Header ---- // -->
 
     <header class="default">
+
+        <p>Bienvenu chez Marche ou Cèpes <br/> Terroir, champignons et tradition !</p>
 
     <!-- // ---- Application Mobile First MenuBurger ---- // -->
         <!-- <div id="burgerMenu_container">
@@ -80,13 +88,12 @@
                 <img id="normalsize_logo" src="/assets/img/logo.png" alt="Logo Marche ou cèpes">
             </div>
             <h1>Venez gouter nos spécialités à base champignon !</h1>
-            <img src="/assets/img/slide-separator_white.png" alt="">
             <h2>Qui sommes nous ?</h2>
             <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. </p>
             <h2>Adresse</h2>
             <p id="adresse">7 Rue de la Fontaine Pinot </p>
-            <button id="cta_where">
-                <a href="#map">Nous sommes ici !</a>
+            <button id="cta">
+                <a href="#map">Cliquez-ici pour réserver</a>
             </button>
         </section>
 
@@ -94,7 +101,6 @@
         
         <section id="menu" class="section">
             <h2>Notre menu</h2>
-            <!-- <img src="/assets/img/slide-separator_white.png" alt=""> -->
             <div id="dishe_container" >
                 <div class="dishe_category">
                     
@@ -218,7 +224,7 @@
                         <textarea id="textarea" type="text" name="message" placeholder="Votre message :" onkeyup="validateMessage()" required></textarea>
                     </div>
                     <div id="form_btn">
-                        <button type="submit" id="form_send">Envoyez !</button>
+                        <button type="submit" id="form_send">Envoyez le formulaire</button>
                         <p id="submit-error"></p>
                     </div>
                 </fieldset>

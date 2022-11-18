@@ -1,14 +1,16 @@
 footer {
+    background-color: #304052;
+    font-family: none;
     
     span {
         margin: 1rem;
-
+        
         @include respondTo(sm) {
             margin: 0;
         }
         
         a {
-            color: black;
+            color: #F5BB65;
             text-decoration: none;
             
             p#legalmention {
@@ -16,7 +18,7 @@ footer {
                 margin-right: 1.5rem;
                 margin-bottom: 2.5rem;
                 padding-top: 0.5rem;
-                padding-bottom: 1rem;
+                padding-bottom: 2rem;
                 text-align: center;
                 
                 @include respondTo(sm) {
