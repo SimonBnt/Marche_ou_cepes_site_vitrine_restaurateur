@@ -1,8 +1,18 @@
 #home {
-    color: #293747;
+    color: #2a3847;
     @include flex($justify: center);
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    position: relative;
+
+    
+    
+    .relative_element_homesection {
+        position: relative;
+    }
+
+
     // height: 100vh;
     
     // @include respondTo(sm) {
@@ -109,4 +119,18 @@
             text-decoration: none;
         }
     }
+}
+
+#home::before {
+    background-image: url(/assets/img/c_panier.jpg);
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    opacity: 0.4;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
 }

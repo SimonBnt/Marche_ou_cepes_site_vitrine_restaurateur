@@ -1,6 +1,10 @@
 footer {
     background-color: #304052;
     font-family: none;
+
+    @include respondTo(sm) {
+        background-color: #333;
+    }
     
     span {
         margin: 1rem;

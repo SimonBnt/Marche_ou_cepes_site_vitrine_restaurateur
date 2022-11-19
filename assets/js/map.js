@@ -16,8 +16,8 @@ let map = L.map('map_container').setView([45.823, 1.266], 13)
 
             // ---- Chargement des tuiles ---- //
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    minZoom: 5,
-    maxZoom: 20,
+    minZoom: 11,
+    maxZoom: 16,
     attribution: '© OpenStreetMap'
 }).addTo(map)
 
