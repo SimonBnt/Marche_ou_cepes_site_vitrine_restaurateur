@@ -5,23 +5,15 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    border-bottom: #333 solid 2px;
 
-    
+    @include respondTo(md) {
+        padding: 0 8rem 0 8rem;
+    }
     
     .relative_element_homesection {
         position: relative;
     }
-
-
-    // height: 100vh;
-    
-    // @include respondTo(sm) {
-    //     height: 100vh;
-    // }
-    
-    // @include respondTo(md) {
-    //     height: 100vh;
-    // }
 
     div#normalsize_logo_container {
         

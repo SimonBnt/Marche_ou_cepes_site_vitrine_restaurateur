@@ -1,26 +1,27 @@
 #map {
   padding: 1rem;
-  margin-bottom: 0;
   background-color: #333;
   
-  
   @include respondTo(sm) {
-    height: 100%;
     padding: 0;
+  }
+
+  @include respondTo(md) {
     border: solid #333 2px;
   }
   
-  
   #map_container {
-    border: solid white 1px;
     border-radius: 0.5rem;
     height: 350px;
     z-index: 250;
     
     @include respondTo(sm) {
-      height: 100%;
       border: none;
       border-radius: 0;
+    }
+
+    @include respondTo(md) {
+      height: 100%;
     }
   }
 }
