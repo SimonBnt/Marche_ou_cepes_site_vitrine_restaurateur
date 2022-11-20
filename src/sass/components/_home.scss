@@ -83,12 +83,10 @@
 
         @include respondTo(sm) {
             font-size: 1.75rem;
-            // padding: 0 8rem 0 8rem;
         }
 
         @include respondTo(md) {
             font-size: 2.25rem;
-            // padding: 0 18rem 0 18rem;
         }
     }
 
@@ -97,13 +95,17 @@
         padding: 1rem;
         border-radius: 0.5rem;
         margin-bottom: 2rem;
+        
 
         @include respondTo(sm) {
             font-size: 1.5rem;
         }
 
-        @include respondTo(sm) {
-            font-size: 1.5rem;
+        @include respondTo(md) {
+            cursor: pointer;
+            :hover {
+                color: white;
+            }
         }
 
         a {

@@ -34,8 +34,10 @@
             padding: 1rem 4rem 1rem 4rem ;
         }
 
-        :hover {
-            color: white;
+        @include respondTo(md) {
+            :hover {
+                color: #F5BB65;
+            }
         }
 
         i{

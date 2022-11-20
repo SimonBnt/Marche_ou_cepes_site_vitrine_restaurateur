@@ -156,8 +156,20 @@
                     @include respondTo(sm) {
                         font-size: 1.5rem;
                     }
+
+                    
+
                 }
             }
+        }
+    }
+}
+
+#form_btn {
+    @include respondTo(md) {
+        :hover {
+            cursor: pointer;
+            border: black solid 2px;
         }
     }
 }

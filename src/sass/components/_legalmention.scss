@@ -17,6 +17,12 @@ footer {
             color: #F5BB65;
             text-decoration: none;
             
+            @include respondTo(md) {
+                :hover {
+                    color: white;
+                }
+            }
+            
             p#legalmention {
                 margin-left: 1.5rem;
                 margin-right: 1.5rem;
@@ -29,6 +35,7 @@ footer {
                     margin-bottom: 0;
                     font-size: 1.5rem;
                 }
+
             }
         }
     }
