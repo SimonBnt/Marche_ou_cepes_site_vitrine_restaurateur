@@ -1,4 +1,5 @@
 #navbar {
+    font-family: none;
     @include flex($justify: center);
     background-color: #333;
     position: fixed;
@@ -9,6 +10,16 @@
     @include respondTo(sm) {
         position: sticky;
         top: 0;
+    }
+
+    #welcome {
+        display: none;
+        color: #F5BB65;
+    
+        @include respondTo(md) {
+            display: block;
+            padding-right: 18rem;
+        }
     }
 
     a {
@@ -23,8 +34,10 @@
             padding: 1rem 4rem 1rem 4rem ;
         }
 
-        :hover {
-            color: white;
+        @include respondTo(md) {
+            :hover {
+                color: #F5BB65;
+            }
         }
 
         i{
