@@ -42,10 +42,10 @@
     
     <nav id="navbar">
         
-            <a href="#home"><i class="fa-solid fa-house"></i>Acceuil</a>
-            <a href="#menu"><i class="fa-solid fa-utensils"></i>Menu</a>
-            <a href="#contact_form"><i class="fa-solid fa-envelope"></i>Contact</a>
-            <a href="#map"><i class="fa-solid fa-map-location"></i>Adresse</a>
+            <a href="#home" title="lien d'accès rapide à l'acceuil"><i class="fa-solid fa-house"></i>Acceuil</a>
+            <a href="#menu" title="lien d'accès rapide au menu"><i class="fa-solid fa-utensils"></i>Menu</a>
+            <a href="#contact_form" title="lien d'accès rapide au formulaire de contact"><i class="fa-solid fa-envelope"></i>Contact</a>
+            <a href="#map" title="lien d'accès rapide à la carte interactive"><i class="fa-solid fa-map-location"></i>Adresse</a>
     </nav>
 
     <!-- // ---- Application Header ---- // -->
@@ -70,7 +70,7 @@
             <h2 class="relative_element_homesection">Adresse</h2>
             <p id="adresse" class="relative_element_homesection">7 Rue de la Fontaine Pinot </p>
             <button id="cta" class="relative_element_homesection">
-                <a href="#map">Cliquez-ici pour réserver</a>
+                <a href="#map" title="lien d'accès rapide au formulaire de contact">Cliquez-ici pour réserver</a>
             </button>
         </section>
 
@@ -201,7 +201,7 @@
                         <textarea id="textarea" type="text" name="message" placeholder="Votre message :" onkeyup="validateMessage()" required></textarea>
                     </div>
                     <div id="form_btn">
-                        <button type="submit" id="form_send">Envoyez le formulaire</button>
+                        <button type="submit" id="form_send" title="Permet d'envoyer le formulaire pour la prise en compte de votre demande">Envoyez le formulaire</button>
                         <p id="submit-error"></p>
                     </div>
                 </fieldset>
@@ -223,7 +223,7 @@
     <!-- // ---- Application Footer ---- // -->
     
     <footer class="default">
-        <span><a href="/mention_legales.html"><p id="legalmention">@Mentions légales</p></a></span>
+        <span><a href="/mention_legales.html" title="Vous redirige vers la page des mentions légales"><p id="legalmention">@Mentions légales</p></a></span>
     </footer>
 </body>
 </html>
