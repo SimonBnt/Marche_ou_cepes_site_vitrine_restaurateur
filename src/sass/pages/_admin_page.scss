@@ -1,7 +1,11 @@
 .body {
+
     margin-top: 10px;
+    color: #304052 !important;
+    position: relative;
 
     #h1-admin {
+        font-family: 'Dancing Script', cursive !important;
         width: 100%;
         height: auto;
         position: absolute;
@@ -19,69 +23,16 @@
         .btn-logout {
             padding: 2px;
             background-color: transparent;
-            color: black;
+            background-color: maroon;
+            color: white;
             font-size: 20px;
             border: 1px solid black;
             border-radius: 5px;
 
             &:hover {
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.7);
                 border: 1px solid black;
-                background-color: maroon;
-                color: white;
             }
-        }
-    }
-
-    #div-bio-admin {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        margin: 0 15px 10px 15px;
-
-        button {
-            cursor: pointer;
-            width: max-content;
-            height: max-content;
-            background-color: transparent;
-            border: 1px solid black;
-            border-radius: 15px;
-            font-size: 15px;
-            &:hover{
-                background-color: maroon;
-                color: white;
-            }
-
-        }
-    }
-
-    #div-address-admin {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-    
-        margin: 0 15px 10px 15px;
-
-        button {
-            cursor: pointer;
-            width: max-content;
-            height: max-content;
-            background-color: transparent;
-            border: 1px solid black;
-            border-radius: 15px;
-            font-size: 15px;
-            &:hover{
-                background-color: maroon;
-                color: white;
-            }
-        }
-    }
-
-    div {
-        #paragraph-admin {
-            margin: 10px 2em;
-            text-align: center;
         }
     }
 
@@ -104,5 +55,178 @@
         border: 1px solid black;
         border-radius: 5px;
     }
+
+    #first-modif-container {
+        position: relative;
+
+        #div-bio-admin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin: 0 15px 10px 15px;
+        }
+
+        button {
+            position: absolute;
+            right: 50px;
+            top: 50%;
+            transform: translate(0, -50%);
+            cursor: pointer;
+            width: max-content;
+            height: max-content;
+            background-color: #304052;
+            color: white;
+            border: 1px solid black;
+            border-radius: 15px;
+            font-size: 15px;
+
+            &:hover {
+                box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.7);
+            }
+
+        }
+
+        #div-address-admin {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            margin: 0 15px 10px 15px;
+        }
+
+
+    }
+
+    div {
+        #paragraph-admin {
+            margin: 10px 2em;
+            text-align: center;
+        }
+    }
+
+    .container-menu {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        gap: 20px;
+
+
+        select {
+            width: 100px;
+        }
+
+        span {
+            padding: 5px;
+            display: flex;
+            justify-content: center;
+
+            h3 {
+                text-transform: uppercase;
+            }
+
+            #btn-change {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                cursor: pointer;
+                background-color: #304052;
+                color: white;
+                border: 1px solid black;
+                border-radius: 15px;
+                font-size: 15px;
+
+                &:hover {
+                    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.7);
+                }
+
+            }
+        }
+
+        #title-menu {
+            background-color: rgb(31, 169, 0);
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 5px 0 5px 10px;
+            padding: 2px;
+            display: flex;
+            align-self: flex-start;
+            font-weight: bold;
+        }
+
+        #description-menu {
+            background-color: rgba(128, 0, 0, 0.491);
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 0 5px 5px 10px;
+            padding: 2px;
+            display: flex;
+            align-self: flex-start;
+        }
+
+        .first-menu {
+            height: max-content;
+            background-color: #3040524e;
+            border-radius: 5px;
+            border: 1px solid #304052;
+            grid-area: 1 / 2 / 4 / 4;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+        }
+
+        .second-menu {
+            height: max-content;
+            background-color: #3040524e;
+            border-radius: 5px;
+            border: 1px solid #304052;
+            grid-area: 1 / 4 / 4 / 6;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .third-menu {
+            height: max-content;
+            background-color: #3040524e;
+            border-radius: 5px;
+            border: 1px solid #304052;
+            grid-area: 4 / 2 / 7 / 4;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .fourth-menu {
+            height: max-content;
+            background-color: #3040524e;
+            border-radius: 5px;
+            border: 1px solid #304052;
+            grid-area: 4 / 4 / 7 / 6;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+    }
+        #btn-save{
+            width: max-content;
+            display: flex;
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            padding: 5px;
+            background-color: transparent;
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+                box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.7);
+                border: 1px solid black;
+            }
+        }
 
 }

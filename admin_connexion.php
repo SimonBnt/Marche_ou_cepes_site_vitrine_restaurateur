@@ -5,7 +5,7 @@ $message = "";
 if (isset($_POST['submit'])) {
     if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=Marche_ou_cèpes', 'root', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=Marche_ou_cepes', 'root', 'root');
     } catch (PDOException $e) {
         echo "Error : " . $e->getMessage();
     }
@@ -51,8 +51,8 @@ if (isset($_POST['submit'])) {
             </div>
             <hr>
             <div class="checkbox-submit">
-                <input type="checkbox">
-                <label for="checkbox">Se souvenir de moi</label>
+                <!-- <input type="checkbox">
+                <label for="checkbox">Se souvenir de moi</label> -->
                 <button type="submit" name="submit">Se connecter</button>
             </div>
             <?php if (!empty($message)) { ?>
