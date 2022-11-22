@@ -137,6 +137,13 @@
             }
 
             #form_btn { 
+                @include respondTo(md) {
+                    &:hover {
+                        cursor: pointer;
+                        border: black solid 2px;
+                    }
+                }
+
                 p {
                     margin-top: 0.5rem;
                     color: red;
@@ -166,10 +173,5 @@
 }
 
 #form_btn {
-    @include respondTo(md) {
-        :hover {
-            cursor: pointer;
-            border: black solid 2px;
-        }
-    }
+    
 }
