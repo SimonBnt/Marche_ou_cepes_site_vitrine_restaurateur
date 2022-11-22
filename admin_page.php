@@ -23,6 +23,17 @@ if ($_SESSION['connected'] != true) {
 </head>
 
 <body class="body">
+    
+
+    <div id="demo" class="modal">
+        <div class="modal_content">
+            <textarea placeholder="Entrer une description" name="" id="textarea" cols="30" rows="5"></textarea>
+            <textarea placeholder="Entrer votre adresse" name="" id="textarea" cols="30" rows="5"></textarea>
+            <button>Enregistrer</button>
+            <a href="#" class="modal_close">&times;</a>
+        </div>
+    </div>
+
     <h1 id="h1-admin">Bienvenue sur la page Administrateur</h1>
     <div class="log-out">
         <a class="btn-logout" href="admin_deconnexion.php">Se déconnecter</a>
@@ -31,11 +42,12 @@ if ($_SESSION['connected'] != true) {
         <p id="paragraph-admin">Sur cette page il vous est possible de voir les contenus modifiables de votre site, et d'y apportées des modifications</p>
     </div>
     <hr>
+
     <div id="first-modif-container">
         <div id="div-bio-admin">
             <p id="bio-admin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, sed?</p>
         </div>
-        <button id="change_bio">Modifier cette section</button>
+        <a id="open-modal" href="#demo">Modifier cette section</a>
         <div id="div-address-admin">
             <p id="address-admin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, iure.</p>
         </div>
@@ -108,8 +120,6 @@ if ($_SESSION['connected'] != true) {
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
 
         </div>
-    </div>
-    <div class="validate-button">
         <button id="btn-save">Enregistrer les modifications</button>
     </div>
 </body>
