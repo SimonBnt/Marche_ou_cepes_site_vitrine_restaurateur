@@ -27,7 +27,9 @@ if ($_SESSION['connected'] != true) {
 
     <div id="modal-bio-address" class="modal">
         <div class="modal_content">
-            <textarea placeholder="Entrer votre description" name="" id="textarea" cols="30" rows="5"></textarea>
+            <label for="textarea">Description/Bio:</label>
+            <textarea placeholder="Entrer votre description" name="" id="textarea" cols="30" rows="5"></textarea><br>
+            <label for="address">Adresse du restaurant:</label>
             <textarea placeholder="Entrer votre adresse" name="" id="textarea" cols="30" rows="5"></textarea>
             <button>Enregistrer</button>
             <a href="#" class="modal_close">&times;</a>
@@ -45,10 +47,12 @@ if ($_SESSION['connected'] != true) {
 
     <div id="first-modif-container">
         <div id="div-bio-admin">
+            <label id="label" for="textarea">Description/Bio:</label>
             <p id="bio-admin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, sed?</p>
         </div>
         <a id="open-modal" href="#modal-bio-address">Modifier cette section</a>
         <div id="div-address-admin">
+            <label id="label" for="address">Adresse du restaurant:</label>
             <p id="address-admin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, iure.</p>
         </div>
     </div>
@@ -120,14 +124,14 @@ if ($_SESSION['connected'] != true) {
                 <h3>A Partager</h3>
                 <a id="btn-change" href="#modal-third-menu"">Modifier</a>
             </span>
-            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
+            <!-- <p id=" title-menu">Lorem ipsum dolor sit amet.</p>
+                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+                    <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+                    <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+                    <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
 
         </div>
 
