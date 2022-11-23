@@ -116,7 +116,7 @@
 }
 
 #home::before {
-    background-image: url(/assets/img/c_panier.jpg);
+    background-image: url("./../img/c_panier.jpg");
     content: "";
     background-size: cover;
     background-repeat: no-repeat;

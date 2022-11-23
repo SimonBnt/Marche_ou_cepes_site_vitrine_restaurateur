@@ -35,7 +35,7 @@
         }
 
         #category1::before {
-            background-image: url(/assets/img/c_panier_table.jpg);
+            background-image: url("./../img/c_panier_table.jpg");
             content: "";
             background-size: cover;
             background-repeat: no-repeat;
@@ -54,7 +54,7 @@
         }
 
         #category3::before {
-            background-image: url(/assets/img/p_cuisine.jpg);
+            background-image: url("./../img/p_cuisine.jpg");
             content: "";
             background-size: cover;
             background-repeat: no-repeat;
@@ -79,7 +79,7 @@
             }
     
             #category4::before {
-                background-image: url(/assets/img/p_cuisine.jpg);
+                background-image: url("./../img/p_cuisine.jpg");
                 content: "";
                 background-size: cover;
                 background-repeat: no-repeat;

@@ -72,6 +72,10 @@ form.addEventListener("submit", (e) => {
     e.preventDefault()
     
     if(validateFirstName() && validateLastName() && validateMessage() && validateNumber()) {
+        submitError.style.display = "block"
+        submitError.innerHTML = "Votre formulaire a bien été envoyé."
+        setTimeout(function(){submitError.style.display = "none"}, 3000)
+        document.forms["form"].submit()
         return true
     } else {
         submitError.style.display = "block"
