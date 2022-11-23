@@ -25,9 +25,9 @@ if ($_SESSION['connected'] != true) {
 <body class="body">
 
 
-    <div id="demo" class="modal">
+    <div id="modal-bio-address" class="modal">
         <div class="modal_content">
-            <textarea placeholder="Entrer une description" name="" id="textarea" cols="30" rows="5"></textarea>
+            <textarea placeholder="Entrer votre description" name="" id="textarea" cols="30" rows="5"></textarea>
             <textarea placeholder="Entrer votre adresse" name="" id="textarea" cols="30" rows="5"></textarea>
             <button>Enregistrer</button>
             <a href="#" class="modal_close">&times;</a>
@@ -47,7 +47,7 @@ if ($_SESSION['connected'] != true) {
         <div id="div-bio-admin">
             <p id="bio-admin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, sed?</p>
         </div>
-        <a id="open-modal" href="#demo">Modifier cette section</a>
+        <a id="open-modal" href="#modal-bio-address">Modifier cette section</a>
         <div id="div-address-admin">
             <p id="address-admin">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, iure.</p>
         </div>
@@ -56,7 +56,7 @@ if ($_SESSION['connected'] != true) {
     <div class="container-menu">
 
         <div class="first-menu">
-            <div id="demo" class="modal">
+            <div id="modal-first-menu" class="modal">
                 <div class="modal_content">
                     <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
@@ -67,10 +67,8 @@ if ($_SESSION['connected'] != true) {
             </div>
             <span>
                 <h3>Entrées</h3>
-                <a id="btn-change" href="#demo">Modifier</a>
+                <a id="btn-change" href="#modal-first-menu">Modifier</a>
             </span>
-            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
@@ -78,11 +76,13 @@ if ($_SESSION['connected'] != true) {
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
         </div>
 
         <div class="second-menu">
-            <div id="demo" class="modal">
+            <div id="modal-second-menu" class="modal">
                 <div class="modal_content">
                     <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
@@ -93,10 +93,8 @@ if ($_SESSION['connected'] != true) {
 
             <span>
                 <h3>Plats</h3>
-                <a id="btn-change" href="#demo">Modifier</a>
+                <a id="btn-change" href="#modal-second-menu">Modifier</a>
             </span>
-            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
@@ -104,21 +102,23 @@ if ($_SESSION['connected'] != true) {
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
         </div>
 
         <div class="third-menu">
-            <div id="demo" class="modal">
+            <div id="modal-third-menu" class="modal">
                 <div class="modal_content">
                     <a href="#" class="modal_close">&times;</a>
-                    <textarea name="" id="textarea" cols="30" rows="3"></textarea>
-                    <textarea name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer une description" name="" id="textarea" cols="30" rows="3"></textarea>
                     <button>Enregistrer</button>
                 </div>
             </div>
             <span>
                 <h3>A Partager</h3>
-                <a id="btn-change" href="#demo">Modifier</a>
+                <a id="btn-change" href="#modal-third-menu"">Modifier</a>
             </span>
             <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
@@ -132,7 +132,7 @@ if ($_SESSION['connected'] != true) {
         </div>
 
         <div class="fourth-menu">
-            <div id="demo" class="modal">
+            <div id="modal-fourth-menu" class="modal">
                 <div class="modal_content">
                     <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
@@ -142,7 +142,7 @@ if ($_SESSION['connected'] != true) {
             </div>
             <span>
                 <h3>Desserts</h3>
-                <a id="btn-change" href="#demo">Modifier</a>
+                <a id="btn-change" href="#modal-fourth-menu">Modifier</a>
             </span>
             <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
