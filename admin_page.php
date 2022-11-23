@@ -23,7 +23,7 @@ if ($_SESSION['connected'] != true) {
 </head>
 
 <body class="body">
-    
+
 
     <div id="demo" class="modal">
         <div class="modal_content">
@@ -56,11 +56,20 @@ if ($_SESSION['connected'] != true) {
     <div class="container-menu">
 
         <div class="first-menu">
+            <div id="demo" class="modal">
+                <div class="modal_content">
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <button>Enregistrer</button>
+                    <a href="#" class="modal_close">&times;</a>
+                </div>
+            </div>
             <span>
                 <h3>Entrées</h3>
-                <button id="btn-change">Modifier</button>
+                <a id="btn-change" href="#demo">Modifier</a>
             </span>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
@@ -69,15 +78,24 @@ if ($_SESSION['connected'] != true) {
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
         </div>
 
         <div class="second-menu">
+            <div id="demo" class="modal">
+                <div class="modal_content">
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <button>Enregistrer</button>
+                    <a href="#" class="modal_close">&times;</a>
+                </div>
+            </div>
+
             <span>
                 <h3>Plats</h3>
-                <button id="btn-change">Modifier</button>
+                <a id="btn-change" href="#demo">Modifier</a>
             </span>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
@@ -86,38 +104,54 @@ if ($_SESSION['connected'] != true) {
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
         </div>
 
         <div class="third-menu">
+            <div id="demo" class="modal">
+                <div class="modal_content">
+                    <a href="#" class="modal_close">&times;</a>
+                    <textarea name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea name="" id="textarea" cols="30" rows="3"></textarea>
+                    <button>Enregistrer</button>
+                </div>
+            </div>
             <span>
                 <h3>A Partager</h3>
-                <button id="btn-change">Modifier</button>
+                <a id="btn-change" href="#demo">Modifier</a>
             </span>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
 
         </div>
 
         <div class="fourth-menu">
+            <div id="demo" class="modal">
+                <div class="modal_content">
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <button>Enregistrer</button>
+                    <a href="#" class="modal_close">&times;</a>
+                </div>
+            </div>
             <span>
                 <h3>Desserts</h3>
-                <button id="btn-change">Modifier</button>
+                <a id="btn-change" href="#demo">Modifier</a>
             </span>
-            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
 
         </div>
         <button id="btn-save">Enregistrer les modifications</button>
