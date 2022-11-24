@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <!-- // ---- Metadata ---- // -->
 
@@ -10,9 +10,7 @@
     
     <title>Marche ou cèpes</title>
 
-    <!-- // ---- Stylesheet ---- // -->
-    <link rel="stylesheet" href="/assets/css/styles.min.css">
-
+    
     <!-- // ---- Web font ---- // -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,21 +18,22 @@
     
     <!-- // ---- Fontawesome ---- // -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- // ---- ScriptJs ---- // -->
-    <script src="/assets/js/map.js"defer></script>
-    <script src="/assets/js/formValidation.js" defer></script>
-    <script src="/assets/js/script.js" defer></script>
-
-    <!-- // ---- link Leaflet ---- // -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
-
-    <!-- // ---- scipt Leaflet ---- // -->
-    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
     
+    <!-- // ---- link Leaflet ---- // -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin="" defer/>
+    
+    <!-- // ---- scipt Leaflet ---- // -->
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="" defer></script>
+    
+    <!-- // ---- ScriptJs ---- // -->
+    <script src="./assets/js/map.js"defer></script>
+    <script src="./assets/js/formValidation.js" defer></script>
+    <!-- <script src="./assets/js/burgerMenu.js" defer></script> -->
     
     <!-- // ---- Favicons ---- // -->
     
+    <!-- // ---- Stylesheet ---- // -->
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
 </head>
 <body>
         
@@ -61,8 +60,14 @@
     <!-- // ---- Application Home section ---- // -->
         
         <section id="home" class="section" class="relative_element_homesection">
+            <?php if(isset($_GET) && ($_GET["sendMail"] == true)) :  ?>
+                <div id="succesMessage">
+                    <p>Votre formulaire a bien été envoyé</p>    
+                    <p>Vous pouvez reprendre votre navigation</p>
+                </div>
+            <?php endif ?>
             <div id="normalsize_logo_container" class="relative_element_homesection">
-                <img id="normalsize_logo" src="/assets/img/logo.png" alt="Logo Marche ou cèpes">
+                <img id="normalsize_logo" src="./assets/img/logo.png" alt="Logo Marche ou cèpes">
             </div>
             <h1 class="relative_element_homesection">Venez gouter nos spécialités à base champignon !</h1>
             <h2 class="relative_element_homesection">Qui sommes nous ?</h2>
@@ -178,7 +183,7 @@
 
         <!-- // ---- Application Contact Form ---- // -->
 
-        <form id="form" action="/monfichier.php" method="post">
+        <form id="form" action="./formValidation.php" method="POST">
                 <fieldset id="form_grid">
                     <div id="div_firstname" class="labelinput_flex_container">
                         <label for="firstname">Prénom</label>
@@ -223,7 +228,7 @@
     <!-- // ---- Application Footer ---- // -->
     
     <footer class="default">
-        <span><a href="/mention_legales.html" title="Vous redirige vers la page des mentions légales"><p id="legalmention">@Mentions légales</p></a></span>
+        <span><a href="./mention_legales.html" title="Vous redirige vers la page des mentions légales"><p id="legalmention">@Mentions légales</p></a></span>
     </footer>
 </body>
 </html>

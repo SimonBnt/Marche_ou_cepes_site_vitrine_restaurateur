@@ -157,19 +157,14 @@
                         font-size: 1.5rem;
                     }
 
-                    
-
+                    @include respondTo(md) {
+                        &:hover {
+                            cursor: pointer;
+                            color: white;
+                        }
+                    }
                 }
             }
-        }
-    }
-}
-
-#form_btn {
-    @include respondTo(md) {
-        :hover {
-            cursor: pointer;
-            border: black solid 2px;
         }
     }
 }
