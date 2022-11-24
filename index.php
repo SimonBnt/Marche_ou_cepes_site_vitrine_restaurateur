@@ -60,6 +60,12 @@
     <!-- // ---- Application Home section ---- // -->
         
         <section id="home" class="section" class="relative_element_homesection">
+            <?php if(isset($_GET) && ($_GET["sendMail"] == true)) :  ?>
+                <div id="succesMessage">
+                    <p>Votre formulaire a bien été envoyé</p>    
+                    <p>Vous pouvez reprendre votre navigation</p>
+                </div>
+            <?php endif ?>
             <div id="normalsize_logo_container" class="relative_element_homesection">
                 <img id="normalsize_logo" src="./assets/img/logo.png" alt="Logo Marche ou cèpes">
             </div>

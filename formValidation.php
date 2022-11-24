@@ -5,21 +5,21 @@ $validateData = [];
 
 // Regex //
 
-$charRegex = "/^[a-zA-Z]$/";
-$msgRegex = "/^[a-z0-9,?!;.:]$/";
+$charRegex = "/^([a-zA-Z' ]+)$/";
+$msgRegex = "/^([a-z0-9,?!;.: ]+)$/";
 $phoneNumberRegex = "/^[0-9]{10}$/";
 
 // Data validation // 
 
 foreach($formData as $key => $value) {
-    switch($formData) {
+    switch($key) {
         case "firstname" :
             if(!empty($value)) {
                 if(is_string($value)) {
                     if(!is_numeric($value)) {
                         if(preg_match($charRegex, $value)) {
                             if(strlen($value) > 1) {
-                                htmlspecialchars($value);
+                               $validateData["firstame"] = htmlspecialchars($value);
                             }
                         }
                     }
@@ -33,7 +33,7 @@ foreach($formData as $key => $value) {
                     if(!is_numeric($value)) {
                         if(preg_match($charRegex, $value)) {
                             if(strlen($value) > 1) {
-                                htmlspecialchars($value);
+                               $validateData["lastame"] = htmlspecialchars($value);
                             }
                         }
                     }
@@ -43,9 +43,9 @@ foreach($formData as $key => $value) {
 
         case "phone_number" :
             if(!empty($value)) {
-                if(is_int($value)) {
+                if(is_numeric($value)) {
                     if(preg_match($phoneNumberRegex, $value)) {
-                        htmlspecialchars($value);
+                        $validateData["phone_number"] = htmlspecialchars($value);
                     }
                 }
             }
@@ -55,10 +55,12 @@ foreach($formData as $key => $value) {
             if(!empty($value)) {
                 if(is_string($value)) {
                     if(preg_match($msgRegex, $value)) {
-                        htmlspecialchars($value);
+                        $validateData["message"] = htmlspecialchars($value);
                     }
                 }
             }
         break;
     }        
 }
+
+require_once("mailer.php");
