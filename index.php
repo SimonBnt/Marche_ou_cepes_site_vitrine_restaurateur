@@ -228,7 +228,7 @@
     <!-- // ---- Application Footer ---- // -->
     
     <footer class="default">
-        <span><a href="./mention_legales.html" title="Vous redirige vers la page des mentions légales"><p id="legalmention">@Mentions légales</p></a></span>
+        <span><a href="./legalmention.php" title="Vous redirige vers la page des mentions légales"><p id="legalmention">Mentions légales</p></a></span>
     </footer>
 </body>
 </html>

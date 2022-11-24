@@ -4,6 +4,6 @@
 
 @import "layout/default", "layout/header", "layout/main", "layout/footer";
 
-@import "components/contact-form", "components/home", "components/menu", "components/map", "components/navbar", "components/menu-burger", "components/legalmention";
+@import "components/contact-form", "components/home", "components/menu", "components/map", "components/navbar", "components/menu-burger";
 
-@import "pages/admin_connexion", "pages/admin_page";
+@import "pages/admin_connexion", "pages/admin_page", "components/legalmention";
