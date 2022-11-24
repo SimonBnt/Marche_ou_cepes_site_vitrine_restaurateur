@@ -124,14 +124,14 @@ if ($_SESSION['connected'] != true) {
                 <h3>A Partager</h3>
                 <a id="btn-change" href="#modal-third-menu"">Modifier</a>
             </span>
-            <!-- <p id=" title-menu">Lorem ipsum dolor sit amet.</p>
-                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
                     <p id="title-menu">Lorem ipsum dolor sit amet.</p>
                     <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
                     <p id="title-menu">Lorem ipsum dolor sit amet.</p>
                     <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
                     <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
+                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+                    <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+                    <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
 
         </div>
 
@@ -148,14 +148,14 @@ if ($_SESSION['connected'] != true) {
                 <h3>Desserts</h3>
                 <a id="btn-change" href="#modal-fourth-menu">Modifier</a>
             </span>
-            <!-- <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
             <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
             <p id="title-menu">Lorem ipsum dolor sit amet.</p>
-            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p> -->
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
+            <p id="title-menu">Lorem ipsum dolor sit amet.</p>
+            <p id="description-menu">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, quis.</p>
 
         </div>
         <button id="btn-save">Enregistrer les modifications</button>

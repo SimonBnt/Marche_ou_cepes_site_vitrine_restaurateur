@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     } catch (PDOException $e) {
         echo "Error : " . $e->getMessage();
     }
-    $res = $pdo->prepare("SELECT * FROM users WHERE login=? and password=?");
+    $res = $pdo->prepare("SELECT * FROM user WHERE login=? and password=?");
     $res->setFetchMode(PDO::FETCH_ASSOC);
     $res->execute(array($_POST['login'], md5($_POST['password'])));
     $tab = $res->fetchAll();
