@@ -1,0 +1,47 @@
+#navbar {
+    font-family: none;
+    @include flex($justify: center);
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
+    
+    @include respondTo(sm) {
+        position: sticky;
+        top: 0;
+    }
+
+    #welcome {
+        display: none;
+        color: #F5BB65;
+    
+        @include respondTo(md) {
+            display: block;
+            padding-right: 18rem;
+        }
+    }
+
+    a {
+        @include flex($justify: center);
+        flex-direction: column;
+        text-decoration: none;
+        color: white;
+        padding: 0.5rem 1.25rem 0.5rem 1.25rem ;
+        font-size: 1rem;
+
+        @include respondTo(sm) {
+            padding: 1rem 4rem 1rem 4rem ;
+        }
+
+        @include respondTo(md) {
+            :hover {
+                color: #F5BB65;
+            }
+        }
+
+        i{
+            font-size: xx-large;
+        }
+    }
+}
