@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : lun. 31 oct. 2022 à 20:03
+-- Généré le : jeu. 24 nov. 2022 à 18:17
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.0.1
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `marche_ou_cepes`
 --
-CREATE DATABASE IF NOT EXISTS `marche_ou_cepes` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `marche_ou_cepes`;
 
 -- --------------------------------------------------------
 
@@ -32,18 +30,25 @@ USE `marche_ou_cepes`;
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `login` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`id`, `login`, `password`) VALUES
+(1, 'admin1', 'e00cf25ad42683b3df678c61f42c6bda');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categories`
+-- Structure de la table `category`
 --
 
-CREATE TABLE `categories` (
+CREATE TABLE `category` (
   `id` int(11) NOT NULL,
-  `nom` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -54,22 +59,22 @@ CREATE TABLE `categories` (
 
 CREATE TABLE `configuration` (
   `email` varchar(255) NOT NULL,
-  `biographie` varchar(255) NOT NULL,
-  `adresse` varchar(255) NOT NULL
+  `bio` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plats`
+-- Structure de la table `dishes`
 --
 
-CREATE TABLE `plats` (
+CREATE TABLE `dishes` (
   `id` int(11) NOT NULL,
   `label` varchar(255) NOT NULL,
-  `titre` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `categorie` int(11) NOT NULL
+  `category` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -83,33 +88,33 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `categories`
+-- Index pour la table `category`
 --
-ALTER TABLE `categories`
+ALTER TABLE `category`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
--- Index pour la table `plats`
+-- Index pour la table `dishes`
 --
-ALTER TABLE `plats`
+ALTER TABLE `dishes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `categorie` (`categorie`);
+  ADD KEY `categorie` (`category`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT pour la table `categories`
+-- AUTO_INCREMENT pour la table `category`
 --
-ALTER TABLE `categories`
+ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `plats`
+-- AUTO_INCREMENT pour la table `dishes`
 --
-ALTER TABLE `plats`
+ALTER TABLE `dishes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -117,10 +122,10 @@ ALTER TABLE `plats`
 --
 
 --
--- Contraintes pour la table `categories`
+-- Contraintes pour la table `category`
 --
-ALTER TABLE `categories`
-  ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`id`) REFERENCES `plats` (`categorie`);
+ALTER TABLE `category`
+  ADD CONSTRAINT `category_ibfk_1` FOREIGN KEY (`id`) REFERENCES `dishes` (`category`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

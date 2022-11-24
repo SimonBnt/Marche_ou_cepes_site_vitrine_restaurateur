@@ -5,11 +5,11 @@ $message = "";
 if (isset($_POST['submit'])) {
     if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=Marche_ou_cepes', 'root', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
     } catch (PDOException $e) {
         echo "Error : " . $e->getMessage();
     }
-    $res = $pdo->prepare("SELECT * FROM user WHERE login=? and password=?");
+    $res = $pdo->prepare("SELECT * FROM admin WHERE login=? and password=?");
     $res->setFetchMode(PDO::FETCH_ASSOC);
     $res->execute(array($_POST['login'], md5($_POST['password'])));
     $tab = $res->fetchAll();
@@ -29,12 +29,12 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="./assets/css/styles.min.css">
     <title>Connexion Administrateur</title>
 </head>
 
 <body id="body">
-    <img class="background_admin" src="assets/img/plat-1.jpg" alt="image d'arrière plan représentant un plan à base de champignons">
+    <!-- <img class="background_admin" src="./assets/img/plat-1.jpg" alt="image d'arrière plan représentant un plan à base de champignons"> -->
     <div class="form">
         <form method="POST" action="">
             <div>
@@ -46,7 +46,8 @@ if (isset($_POST['submit'])) {
             </div>
             <hr>
             <div class="password-div">
-                <label class="label-input" type="mot_de_passe">Mot de passe:</label>
+                <label class="label-input" type="text">Mot de passe:</label>
+                <label for="" type="text"></label>
                 <input class="input" type="password" name="password" placeholder="Entrée votre mot de passe"><br>
             </div>
             <hr>
