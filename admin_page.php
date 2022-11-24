@@ -62,8 +62,8 @@ if ($_SESSION['connected'] != true) {
         <div class="first-menu">
             <div id="modal-first-menu" class="modal">
                 <div class="modal_content">
-                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
-                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea><br>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
                     <button>Enregistrer</button>
                     <a href="#" class="modal_close">&times;</a>
@@ -88,7 +88,7 @@ if ($_SESSION['connected'] != true) {
         <div class="second-menu">
             <div id="modal-second-menu" class="modal">
                 <div class="modal_content">
-                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
                     <button>Enregistrer</button>
                     <a href="#" class="modal_close">&times;</a>
@@ -115,7 +115,7 @@ if ($_SESSION['connected'] != true) {
             <div id="modal-third-menu" class="modal">
                 <div class="modal_content">
                     <a href="#" class="modal_close">&times;</a>
-                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
                     <textarea placeholder="Entrer une description" name="" id="textarea" cols="30" rows="3"></textarea>
                     <button>Enregistrer</button>
                 </div>
@@ -138,7 +138,7 @@ if ($_SESSION['connected'] != true) {
         <div class="fourth-menu">
             <div id="modal-fourth-menu" class="modal">
                 <div class="modal_content">
-                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
                     <button>Enregistrer</button>
                     <a href="#" class="modal_close">&times;</a>

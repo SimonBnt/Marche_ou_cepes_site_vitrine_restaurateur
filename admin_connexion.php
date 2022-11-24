@@ -51,8 +51,6 @@ if (isset($_POST['submit'])) {
             </div>
             <hr>
             <div class="checkbox-submit">
-                <!-- <input type="checkbox">
-                <label for="checkbox">Se souvenir de moi</label> -->
                 <button type="submit" name="submit">Se connecter</button>
             </div>
             <?php if (!empty($message)) { ?>
