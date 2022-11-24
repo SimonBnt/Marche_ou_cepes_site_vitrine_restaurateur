@@ -5,11 +5,11 @@ $message = "";
 if (isset($_POST['submit'])) {
     if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
     try {
-        $pdo = new PDO('mysql:host=localhost;dbname=Marche_ou_cepes', 'root', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
     } catch (PDOException $e) {
         echo "Error : " . $e->getMessage();
     }
-    $res = $pdo->prepare("SELECT * FROM user WHERE login=? and password=?");
+    $res = $pdo->prepare("SELECT * FROM admin WHERE login=? and password=?");
     $res->setFetchMode(PDO::FETCH_ASSOC);
     $res->execute(array($_POST['login'], md5($_POST['password'])));
     $tab = $res->fetchAll();
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body id="body">
-    <img class="background_admin" src="./assets/img/plat-1.jpg" alt="image d'arrière plan représentant un plan à base de champignons">
+    <!-- <img class="background_admin" src="./assets/img/plat-1.jpg" alt="image d'arrière plan représentant un plan à base de champignons"> -->
     <div class="form">
         <form method="POST" action="">
             <div>
