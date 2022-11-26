@@ -12,15 +12,11 @@
 
     <!-- // ---- Stylesheet ---- // -->
     <link rel="stylesheet" href="./assets/css/styles.min.css">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
 
     <!-- // ---- Web font ---- // -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet"> -->
-    
-    <!-- // ---- Fontawesome ---- // -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
     
     <!-- // ---- ScriptJs ---- // -->
     <script src="./assets/js/modal.js" defer></script>
