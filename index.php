@@ -28,7 +28,6 @@
     <!-- // ---- ScriptJs ---- // -->
     <script src="./assets/js/map.js"defer></script>
     <script src="./assets/js/formValidation.js" defer></script>
-    <!-- <script src="./assets/js/burgerMenu.js" defer></script> -->
     
     <!-- // ---- Favicons ---- // -->
     
