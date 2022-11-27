@@ -4,12 +4,13 @@ const title = document.getElementById("disheCreation_title")
 const description = document.getElementById("disheCreation_description")
 const categorySelector = document.getElementById("category_selector")
 const formSend = document.getElementById("disheCreation_modalBtn")
+const acceptedCategory = ["entree", "plat", "partager", "dessert"]
 
 const titleError = document.getElementById("title-error")
 const descriptionError = document.getElementById("description-error")
 const selectorError = document.getElementById("selector-error")
-const messageError = document.getElementById("message-error")
-const submitError = document.getElementById("submit-error")
+const formError = document.getElementById("form-error")
+
 
 const validateTitle = () => {
     if(title.value === "" || title.value == null) {
@@ -37,23 +38,36 @@ const validateDescription = () => {
     return true
 } 
 
-// const validateSelector = () => {
-    
-// } 
+const validateSelector = () => {
+    if(categorySelector.value === "" || categorySelector.value == null) {
+        selectorError.innerHTML = "Une catégorie de plat est nécéssaire"
+        return false
+    }
+    if(categorySelector.value == "selectCategory") {
+        selectorError.innerHTML = "Vous devez selectionner une catégorie"
+        return false
+    }
+    // if(categorySelector.value !== acceptedCategory.value) {
+    //     selectorError.innerHTML = "Vous devez selectionner une catégorie valide parmis les options suivantes, entrée; plat; a partager; déssert"
+    //     return false
+    // }
+    selectorError.innerHTML = '<i class="fas fa-check-circle"></i>'
+    return true
+} 
 
 form.addEventListener("submit", (e) => {
     e.preventDefault()
     
-//     if(validateString() && validateSelector()) {
-//         submitError.style.display = "block"
-//         submitError.innerHTML = "Votre formulaire a bien été envoyé."
-//         setTimeout(function(){submitError.style.display = "none"}, 3000)
-//         document.forms["form"].submit()
-//         return true
-//     } else {
-//         submitError.style.display = "block"
-//         submitError.innerHTML = "Remplissez correctement le formulaire avant d'envoyer"
-//         setTimeout(function(){submitError.style.display = "none"}, 3000)
-//         return false
-//     }
+    if(validateTitle() && validateSelector() && validateDescription()) {
+        formError.style.display = "block"
+        formError.innerHTML = "Votre plat a bien été créer."
+        setTimeout(function(){formError.style.display = "none"}, 3000)
+        document.forms["disheCreationForm"].submit()
+        return true
+    } else {
+        formError.style.display = "block"
+        formError.innerHTML = "Remplissez correctement le formulaire."
+        setTimeout(function(){formError.style.display = "none"}, 3000)
+        return false
+    }
 })

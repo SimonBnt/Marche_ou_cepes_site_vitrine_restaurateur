@@ -1,3 +1,30 @@
+<?php
+
+session_start();
+
+require_once "./inc/functionDb.php";
+
+if($_POST && count($_POST)) {
+    if(isDisheValid($_POST)) {
+        $title = htmlspecialchars($_POST["title"]);
+        $description = htmlspecialchars($_POST["description"]);
+        $category = htmlspecialchars($_POST["category"]);
+
+        addDisheToDb($_POST["title"], $_POST["description"], $_POST["category"]);
+
+        echo '<pre>';
+        var_dump($_POST);
+        echo '</pre>';
+        die();
+        echo "vvv";
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -62,7 +89,7 @@
                         <button class="close" role="button" data-dismiss="dialog">x</button>
                         <h2 id="modal_h2">Fonctionalité de création de plat</h2>
 
-                        <form action="./modalFormValidation.php" method="POST" id="disheCreationForm" class="modal_form">
+                        <form action="./res.php" method="POST" id="disheCreationForm" class="modal_form">
                             <p class="modal_redStar_message">Les champs avec une étoiles rouges (*) sont obligatoires.</p>
                             <div class="modalForm_div" id="disheTitle_div">
                                 <label for="disheTitle" class="modalForm_label">Titre du plat :</label>
@@ -77,11 +104,18 @@
                             </div>
                             <div class="modalForm_div" id="disheSelector_div">
                                 <label for="disheSelector" class="modalForm_label">Choix d'une categorie correspondante :</label>
-                                <select name="category" id="category_selector"></select onkeyup="validateSelector()" required>
+                                <select name="category" id="category_selector" name="setCategory" onkeyup="validateSelector()" required>
+                                    <option  value="selectCategory">Sélectionez une catégorie</option>
+                                    <option value="entree">Entrée</option>
+                                    <option value="plat">Plat</option>
+                                    <option value="partager">A partager</option>
+                                    <option value="dessert">Déssert</option>
+                                </select>
                                 <span class="modalForm_span" id="selector-error"></span>
                             </div>
                             <div class="modalForm_div" id="modalForm_sendBtn_div">
                                 <button type="submit" class="modal_sendBtn" id="disheCreation_modalBtn">Créer le plat</button>
+                                <span class="modalForm_span" id="form-error"></span>
                             </div>
                         </form>
 
