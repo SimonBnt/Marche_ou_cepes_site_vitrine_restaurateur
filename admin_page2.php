@@ -16,7 +16,6 @@ if($_POST && count($_POST)) {
         var_dump($_POST);
         echo '</pre>';
         die();
-        echo "vvv";
     }
 }
 
@@ -89,7 +88,7 @@ if($_POST && count($_POST)) {
                         <button class="close" role="button" data-dismiss="dialog">x</button>
                         <h2 id="modal_h2">Fonctionalité de création de plat</h2>
 
-                        <form action="./res.php" method="POST" id="disheCreationForm" class="modal_form">
+                        <form action="./admin_page2.php" method="POST" id="disheCreationForm" class="modal_form">
                             <p class="modal_redStar_message">Les champs avec une étoiles rouges (*) sont obligatoires.</p>
                             <div class="modalForm_div" id="disheTitle_div">
                                 <label for="disheTitle" class="modalForm_label">Titre du plat :</label>
@@ -127,7 +126,109 @@ if($_POST && count($_POST)) {
         <!-- // ---- Menu edition section ---- // -->
 
         <section class="admin_page_section" id="menuEdition_section">
-            <h2 id="modal_h2" class="m_h2">Editez vos menus !</h2>
+            <h2 id="" class="m_h2">Editez vos menus !</h2>
+
+            <div id="editionDishe_container" >
+                <div class="editionDishe_category"  id="disheCategory1">
+                    
+                    <h3>Entrées</h3>
+                    
+                    <div class="dishes">
+                            <?php $returnedDishe = getDisheFromDb();?>
+
+                            <?php if(!empty($returnedDishe)) : ?>
+
+                            <?php foreach($returnedDishe as $key => $dishe) : ?>
+
+                            <?php echo "<select name='' id='' class=''>" ;?>
+                            <?php echo "<option  value=".$dishe['title'].">" ;?>
+                            <?php echo "</option>" ;?>
+                            <?php echo "<option  value=".$dishe['description'].">" ;?>
+                            <?php echo "</option>" ;?>
+                            <?php echo "</select>" ;?>
+
+                            <?php endforeach; ?>
+
+                            <?php endif; ?>
+                    </div>
+
+                    <div class="dishes">
+                    </div>
+
+                    <div class="dishes">
+                    </div>
+
+                    <div class="dishes">
+                    </div>
+                </div>
+
+                <div class="editionDishe_category" id="disheCategory2">
+                    <h3>Plats</h3>
+
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                </div>
+
+                <div class="editionDishe_category" id="disheCategory3">
+                    <h3>A partager</h3>
+
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                </div>
+
+                <div class="editionDishe_category"  id="disheCategory4">
+                    <h3>Desserts</h3>
+
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    <div class="dishes">
+                        <p class="dishe_align-start">titre</p>
+                        <p class="dishe_align-start">description</p>
+                    </div>
+                    
+                </div>
+            </div>
             
         </section>
     </main>

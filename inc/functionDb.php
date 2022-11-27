@@ -25,8 +25,8 @@ function addDisheToDb($title, $description, $category){
 	);
 
 	try {
-		$sql = "INSERT INTO dishes (title, description, category) VALUES (:title, :description, :category);";
-		$stmt = $pdo->prepare($sql);
+		$insert = "INSERT INTO dishes (title, description, category) VALUES (:title, :description, :category)";
+		$stmt = $pdo->prepare($insert);
 		$stmt->bindParam('title', $dishe['title']);
 		$stmt->bindParam('description', $dishe['description']);
 		$stmt->bindParam('category', $dishe['category']);
@@ -35,5 +35,20 @@ function addDisheToDb($title, $description, $category){
 
 	} catch (PDOException $error) {
 		return [$error->getCode()];
+	}
+}
+
+function getDisheFromDb(){
+
+	global $pdo;
+
+	try {
+			$select = "SELECT * FROM dishes";
+			$stmt = $pdo->prepare($select);
+			$stmt->execute();
+
+			return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	} catch (PDOException $error) {
+			return [$error->getCode()];
 	}
 }
