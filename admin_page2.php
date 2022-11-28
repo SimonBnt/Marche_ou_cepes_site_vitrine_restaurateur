@@ -84,11 +84,11 @@ if(isset($_POST) && isDisheValid($_POST)) {
                 <div class="editionDishe_category"  id="disheCategory1">
                     <h3>Entrées</h3>
                     <div class="dishes">
-                        <?php echo $get = getDisheFromDb() ;?>
-                        <?php echo '<pre>';
-                        var_dump($get);
-                        echo '</pre>';
-                        ;?>
+                        <?php //echo $get = getDisheFromDb() ;?>
+                        <?php //echo '<pre>';
+                        //var_dump($get);
+                        //echo '</pre>';
+                        //;?>
                     </div>
                     <div class="dishes">
                     </div>
@@ -191,12 +191,16 @@ if(isset($_POST) && isDisheValid($_POST)) {
                     </div>
                     <div class="modalForm_div" id="disheSelector_div">
                         <label for="disheSelector" class="modalForm_label">Choix d'une categorie correspondante :</label>
+                        <?php $category = getCategory() ?>
+
                         <select id="category_selector" name="setCategory" onkeyup="validateSelector()" required>
-                            <option  value="selectCategory">Sélectionez une catégorie</option>
-                            <option value="1">1 : Entrée</option>
-                            <option value="2">2 : Plat</option>
-                            <option value="3">3 : A partager</option>
-                            <option value="4">4 : Déssert</option>
+                        <option value="selectCategory">Sélectionez une catégorie</option>
+                                <?php foreach ( $category as $key => $categories ): ?>
+                                <option value="<?php echo $categories['id'] ?>">
+                                    <?php echo $categories['id'] ?> :
+                                    <?php echo $categories['name'] ?>
+                                </option>
+                                <?php endforeach ; ?>
                         </select>
                         <span class="modalForm_span" id="selector-error"></span>
                     </div>
