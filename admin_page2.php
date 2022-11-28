@@ -70,7 +70,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
                     <a href="#" role="button" data-target="#modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Créez un plat</a>
                 </button>
 
-                <button id="" class="disheCreation_classBtn">
+                <button class="disheCreation_classBtn">
                     <a href="#" role="button" data-target="#disheListModal" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Voir la liste des plats</a>
                 </button>
             </div>
@@ -79,7 +79,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
 <!-- // ---- Menu edition section ---- // -->
 
         <section class="admin_page_section" id="menuEdition_section">
-            <h2 id="" class="m_h2">Editez vos menus !</h2>
+            <h2 class="m_h2">Editez vos menus !</h2>
             <div id="editionDishe_container" >
                 <div class="editionDishe_category"  id="disheCategory1">
                     <h3>Entrées</h3>
@@ -96,7 +96,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
                     </div>
                     <div class="dishes">
                     </div>
-                    <button id="" class="admin_page_classBtn">
+                    <button class="admin_page_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal1" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les entrées</a>
                     </button>
                 </div>
@@ -118,7 +118,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
                         
                     </div>
 
-                    <button id="" class="admin_page_classBtn">
+                    <button class="admin_page_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal2" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les plats</a>
                     </button>
                 </div>
@@ -140,7 +140,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
                         
                     </div>
 
-                    <button id="" class="admin_page_classBtn">
+                    <button class="admin_page_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal3" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les plats a partager</a>
                     </button>
                 </div>
@@ -162,7 +162,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
                         
                     </div>
                     
-                    <button id="" class="admin_page_classBtn">
+                    <button class="admin_page_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal4" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les desserts</a>
                     </button>
                 </div>
@@ -225,8 +225,8 @@ if(isset($_POST) && isDisheValid($_POST)) {
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Les Entrées</h2>
-                <div class="modalForm_div" id="">
-                    <button type="submit" class="modal_sendBtn" id="">Créer le plat</button>
+                <div class="modalForm_div">
+                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
                 </div>
             </div>
         </div>
@@ -238,6 +238,9 @@ if(isset($_POST) && isDisheValid($_POST)) {
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Les Plats</h2>
+                <div class="modalForm_div">
+                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                </div>
             </div>
         </div>
 
@@ -248,6 +251,9 @@ if(isset($_POST) && isDisheValid($_POST)) {
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Les plats a partager</h2>
+                <div class="modalForm_div">
+                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                </div>
             </div>
         </div>
 
@@ -258,6 +264,9 @@ if(isset($_POST) && isDisheValid($_POST)) {
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">les Desserts</h2>
+                <div class="modalForm_div">
+                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                </div>
             </div>
         </div>
     </main>
