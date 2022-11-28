@@ -41,7 +41,7 @@
                 color: aliceblue;
             }
 
-            #disheCreation_btn {
+            .disheCreation_classBtn {
                 border: solid #333 2px;
                 border-radius: 0.5rem;
                 background-color: #333;
@@ -57,6 +57,10 @@
                         color: #F5BB65;
                     }
                 }
+            }
+
+            #disheCreation_btn {
+                margin-right: 2rem;
             }
         }
     }
@@ -102,13 +106,23 @@
                     padding-top: 0.5rem;
                     padding-left: 8rem;
                     font-size: 1.25rem;
-                    
-                    @include respondTo(sm) {
-                        font-size: 1.5rem;
-                    }
-        
-                    @include respondTo(md) {
-                        font-size: 1.75rem;
+                }
+
+                .admin_page_classBtn {
+                    border: solid #333 2px;
+                    border-radius: 0.5rem;
+                    background-color: #333;
+                    margin-bottom: 2rem;
+                    padding: 0.5rem;
+                
+                    a {
+                        color: white;
+                        text-decoration: none;
+
+                        &:hover {
+                            cursor: pointer;
+                            color: #F5BB65;
+                        }
                     }
                 }
             }  

@@ -17,7 +17,7 @@ const validateTitle = () => {
         titleError.innerHTML = "Un titre de plat est nécéssaire"
         return false
     }
-    if(!title.value.match(/^[A-Za-z]*$/)) {
+    if(!title.value.match(/^[a-zA-Z_ ]*$/)) {
         titleError.innerHTML = "Un titre de plat ne doit contenir que des lettres"
         return false
     }
@@ -30,7 +30,7 @@ const validateDescription = () => {
         descriptionError.innerHTML = "Une description de plat est nécéssaire"
         return false
     }
-    if(!description.value.match(/^[A-Za-z]*$/)) {
+    if(!description.value.match(/^[a-zA-Z0-9_ ]*$/)) {
         descriptionError.innerHTML = "Une description de plat ne doit contenir que des lettres"
         return false
     }
