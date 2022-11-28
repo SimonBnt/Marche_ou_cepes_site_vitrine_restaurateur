@@ -220,16 +220,24 @@ if(isset($_POST) && isDisheValid($_POST)) {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Voici la liste des plats enregistrés en base de donnée</h2>
 
-                <!-- <table class="table">
+                <table id="disheListTable">
 				<thead>
 					<tr>
-						<th scope="col">Numéro de lien</th>
-						<th scope="col">Titre du lien</th>
-						<th scope="col">Description du lien</th>
-						<th scope="col">URL</th>
+						<th scope="col">Titre du plat</th>
+						<th scope="col">Description du plat</th>
+						<th scope="col">catégorie</th>
 					</tr>
+
+                    <?php if();?>
+                    <?php ;?>
+                    <?php foreach ( $category as $key => $categories ): ?>
+                                <option value="<?php echo $categories['id'] ?>">
+                                    <?php echo $categories['id'] ?> :
+                                    <?php echo $categories['name'] ?>
+                                </option>
+                                <?php endforeach ;?>
 				</thead>
-				<tbody> -->
+				<tbody>
             </div>
         </div>
 
