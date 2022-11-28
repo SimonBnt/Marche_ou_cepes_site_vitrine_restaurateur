@@ -64,10 +64,10 @@ if(isset($_POST) && isDisheValid($_POST)) {
                 <h2 id="disheCreation_h2" class="m_h2">Créez vos plat !</h2>
                 <p id="creation_info" class="m_p">Grâce à cette fonctionnalité, vous avez la possibilité de créer des plats et les ajouter à votre base de donnée.</p>
                 
-<!-- // ---- modal button  ---- // -->
+<!-- // ---- disheCreation modal button  ---- // -->
                 
                 <button id="disheCreation_btn" class="disheCreation_classBtn">
-                    <a href="#" role="button" data-target="#modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Créez un plat</a>
+                    <a href="#" role="button" data-target="#disheCreationModal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Créez un plat</a>
                 </button>
 
                 <button class="disheCreation_classBtn">
@@ -171,7 +171,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
 
 <!-- // ---- disheCreation modal  class "show" (e) /modal.js ---- // -->
                 
-        <div class="adminPage_modal" id="modal" role="dialog">
+        <div class="adminPage_modal" id="disheCreationModal" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Fonctionalité de création de plat</h2>
@@ -219,6 +219,17 @@ if(isset($_POST) && isDisheValid($_POST)) {
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Voici la liste des plats enregistrés en base de donnée</h2>
+
+                <!-- <table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Numéro de lien</th>
+						<th scope="col">Titre du lien</th>
+						<th scope="col">Description du lien</th>
+						<th scope="col">URL</th>
+					</tr>
+				</thead>
+				<tbody> -->
             </div>
         </div>
 

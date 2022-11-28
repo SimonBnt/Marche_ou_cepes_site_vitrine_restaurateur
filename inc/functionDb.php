@@ -1,7 +1,5 @@
 <?php
 
-
-
 require_once "configDb.php";
 
 function isDisheValid(array $dishe)
