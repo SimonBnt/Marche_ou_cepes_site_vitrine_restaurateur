@@ -1,15 +1,15 @@
 <?php
 
-require_once "./inc/configDb.php";
+require_once "configDb.php";
 
 function isDisheValid($dishe = array()) {
     if($dishe && count($dishe) 
-        && array_key_exists('title', $dishe) 
-            && array_key_exists('description', $dishe) 
-                && array_key_exists('category', $dishe)
-                    && !empty($dishe['title']) 
-                        && !empty($dishe['description']) 
-                            && !empty($dishe['category']))
+        && array_key_exists("title", $dishe) 
+            && array_key_exists("description", $dishe) 
+                && array_key_exists("category", $dishe)
+                    && !empty($dishe["title"]) 
+                        && !empty($dishe["description"]) 
+                            && !empty($dishe["category"]))
     return true;
 }
 
@@ -17,25 +17,25 @@ function isDisheValid($dishe = array()) {
 function addDisheToDb($title, $description, $category){
 
 	global $pdo;
-		
+	
 	$dishe = array(
-		'title' => htmlspecialchars($title),
-		'description' => htmlspecialchars($description),
-		'category' => htmlspecialchars($category),
+		"title" => htmlspecialchars($title),
+		"description" => htmlspecialchars($description),
+		"category" => (int) htmlspecialchars($category),
 	);
-
+	
 	try {
-		$insert = "INSERT INTO dishes (title, description, category) VALUES (:title, :description, :category)";
+		$insert = "INSERT INTO dishes (title, description, category_id) VALUES (:title, :description, :category)";
 		$stmt = $pdo->prepare($insert);
-		$stmt->bindParam('title', $dishe['title']);
-		$stmt->bindParam('description', $dishe['description']);
-		$stmt->bindParam('category', $dishe['category']);
+		$stmt->bindParam(":title", $dishe["title"]);
+		$stmt->bindParam(":description", $dishe["description"]);
+		$stmt->bindParam(":category", $dishe["category"]);
 		$stmt->execute();
-		return $pdo->lastInsertId();
 
 	} catch (PDOException $error) {
 		return [$error->getCode()];
 	}
+
 }
 
 function getDisheFromDb(){

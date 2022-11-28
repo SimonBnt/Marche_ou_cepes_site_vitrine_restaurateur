@@ -59,7 +59,7 @@
     <!-- // ---- Application Home section ---- // -->
         
         <section id="home" class="section" class="relative_element_homesection">
-            <?php if(isset($_GET) && ($_GET["sendMail"] == true)) :  ?>
+            <?php if(isset($_GET) && (isset($_GET["sendMail"]) && !empty($_GET["sendMail"]))):?>
                 <div id="succesMessage">
                     <p>Votre formulaire a bien été envoyé</p>    
                     <p>Vous pouvez reprendre votre navigation</p>

@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le : jeu. 24 nov. 2022 à 18:46
--- Version du serveur : 5.7.24
--- Version de PHP : 8.0.1
+-- Host: localhost
+-- Generation Time: Nov 28, 2022 at 12:32 PM
+-- Server version: 5.7.24
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `marche_ou_cepes`
+-- Database: `marche_ou_cepes`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `login`, `password`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `admin` (`id`, `login`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -54,7 +54,7 @@ CREATE TABLE `category` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `configuration`
+-- Table structure for table `configuration`
 --
 
 CREATE TABLE `configuration` (
@@ -66,66 +66,65 @@ CREATE TABLE `configuration` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `dishes`
+-- Table structure for table `dishes`
 --
 
 CREATE TABLE `dishes` (
   `id` int(11) NOT NULL,
-  `label` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `category` int(11) NOT NULL
+  `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id` (`id`);
 
 --
--- Index pour la table `dishes`
+-- Indexes for table `dishes`
 --
 ALTER TABLE `dishes`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `categorie` (`category`);
+  ADD KEY `categorie` (`category_id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `dishes`
+-- AUTO_INCREMENT for table `dishes`
 --
 ALTER TABLE `dishes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `category`
+-- Constraints for table `category`
 --
 ALTER TABLE `category`
-  ADD CONSTRAINT `category_ibfk_1` FOREIGN KEY (`id`) REFERENCES `dishes` (`category`);
+  ADD CONSTRAINT `category_ibfk_1` FOREIGN KEY (`id`) REFERENCES `dishes` (`category_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

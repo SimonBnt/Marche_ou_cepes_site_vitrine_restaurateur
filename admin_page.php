@@ -1,8 +1,9 @@
 <?php
 
 session_start();
+
 if ($_SESSION['connected'] != true) {
-    header('location:admin_connexion.php');
+    header('location:admin_connection.php');
     exit();
     var_dump($tab);
 }

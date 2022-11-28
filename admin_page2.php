@@ -4,25 +4,16 @@ session_start();
 
 require_once "./inc/functionDb.php";
 
-if($_POST && count($_POST)) {
-    if(isDisheValid($_POST)) {
+
+if(isset($_POST) && isDisheValid($_POST)) {
+
         $title = htmlspecialchars($_POST["title"]);
         $description = htmlspecialchars($_POST["description"]);
-        $category = htmlspecialchars($_POST["category"]);
+        $category_id = htmlspecialchars($_POST["category_id"]);
 
-        addDisheToDb($_POST["title"], $_POST["description"], $_POST["category"]);
-
-        echo '<pre>';
-        var_dump($_POST);
-        echo '</pre>';
-        die();
-    }
+        addDisheToDb($title, $description, $category_id);
 }
-
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -105,10 +96,10 @@ if($_POST && count($_POST)) {
                                 <label for="disheSelector" class="modalForm_label">Choix d'une categorie correspondante :</label>
                                 <select name="category" id="category_selector" name="setCategory" onkeyup="validateSelector()" required>
                                     <option  value="selectCategory">Sélectionez une catégorie</option>
-                                    <option value="entree">Entrée</option>
-                                    <option value="plat">Plat</option>
-                                    <option value="partager">A partager</option>
-                                    <option value="dessert">Déssert</option>
+                                    <option value="1">1 : Entrée</option>
+                                    <option value="2">2 : Plat</option>
+                                    <option value="3">3 : A partager</option>
+                                    <option value="4">4 : Déssert</option>
                                 </select>
                                 <span class="modalForm_span" id="selector-error"></span>
                             </div>
@@ -134,22 +125,7 @@ if($_POST && count($_POST)) {
                     <h3>Entrées</h3>
                     
                     <div class="dishes">
-                            <?php $returnedDishe = getDisheFromDb();?>
-
-                            <?php if(!empty($returnedDishe)) : ?>
-
-                            <?php foreach($returnedDishe as $key => $dishe) : ?>
-
-                            <?php echo "<select name='' id='' class=''>" ;?>
-                            <?php echo "<option  value=".$dishe['title'].">" ;?>
-                            <?php echo "</option>" ;?>
-                            <?php echo "<option  value=".$dishe['description'].">" ;?>
-                            <?php echo "</option>" ;?>
-                            <?php echo "</select>" ;?>
-
-                            <?php endforeach; ?>
-
-                            <?php endif; ?>
+                           
                     </div>
 
                     <div class="dishes">
@@ -166,21 +142,17 @@ if($_POST && count($_POST)) {
                     <h3>Plats</h3>
 
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
 
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                 </div>
 
@@ -188,21 +160,17 @@ if($_POST && count($_POST)) {
                     <h3>A partager</h3>
 
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
 
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                 </div>
 
@@ -210,21 +178,17 @@ if($_POST && count($_POST)) {
                     <h3>Desserts</h3>
 
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
 
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     <div class="dishes">
-                        <p class="dishe_align-start">titre</p>
-                        <p class="dishe_align-start">description</p>
+                        
                     </div>
                     
                 </div>
