@@ -86,22 +86,22 @@ try {
         
     <!-- // ---- Deconnexion button---- // -->
         
-        <div id="deconnection_btnDiv">
-            <button>
-                <a id="" href="admin_deconnection.php">Se déconnecter</a>
-            </button>
+    
+    <div id="Head_div" class="">
+            <div id="deconnection_btnDiv">
+                <button>
+                    <a id="" href="admin_deconnection.php">Se déconnecter</a>
+                </button>
+            </div>
+            <h1 id="admin_page_h1">Page Administrateur</h1>
+            <p id="admin_page_p">Cette page vous permet de voir les contenus éditables de votre site, et de les modifier à votre guise.
         </div>
-        
+
 <!-- // ---- Config section ---- // -->
         <section class="admin_page_section" id="config_section">
-            <div id="configSectionHead_div" class="">
-                <h1 id="admin_page_h1">Page Administrateur</h1>
-                <p id="admin_page_p">Cette page vous permet de voir les contenus éditables de votre site, et de les modifier à votre guise.
-            </div>
-                    
             <div id="returnedConfig_divG">    
+                <h2 id="configSection_h2" class="m_h2">Editez votre description et votre adresse !</h2>
                 <div class="returnedConfig_div">    
-                    <h2 id="configSection_h2" class="m_h2">Editez votre description et votre adresse !</h2>
                     <label class="returnedConfig_label" for="description/bio">Description/Bio :</label>
                     <p class="returnedConfig_p">
                         <?php
@@ -113,16 +113,12 @@ try {
                         ?>
                     </p>
                 </div>
-            </div>
 
     <!-- // ---- configSection modal button  ---- // -->
                     
-                <button id="configSection_btn">
-                    <a href="#" role="button" data-target="#configEdition_modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Modifiez votre description et votre adresse</a>
-                </button>
-                
+    
                 <div class="returnedConfig_div">    
-                    <label class="returnedConfig_label" for="address"></label>
+                    <label class="returnedConfig_label" for="address">Adresse du restaurant :</label>
                     <p class="returnedConfig_p">
                         <?php
                         $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
@@ -133,6 +129,10 @@ try {
                         ?>
                     </p>
                 </div>
+
+                <button id="configSection_btn">
+                    <a href="#" role="button" data-target="#configEdition_modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Modifiez votre description et votre adresse</a>
+                </button>
             </div>
         </section>
         
