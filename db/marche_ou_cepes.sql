@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2022 at 02:15 PM
+-- Generation Time: Nov 29, 2022 at 10:35 AM
 -- Server version: 5.7.24
 -- PHP Version: 8.0.1
 
@@ -57,7 +57,9 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'entree'),
-(2, 'plat');
+(2, 'plat'),
+(3, 'a partager'),
+(4, 'dessert');
 
 -- --------------------------------------------------------
 
@@ -66,7 +68,7 @@ INSERT INTO `category` (`id`, `name`) VALUES
 --
 
 CREATE TABLE `configuration` (
-  `email` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
   `bio` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -85,6 +87,17 @@ CREATE TABLE `dishes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Dumping data for table `dishes`
+--
+
+INSERT INTO `dishes` (`id`, `title`, `description`, `category_id`) VALUES
+(63, 'pate au beurre', 'pate avec du beurre et une pointe de sel', 2),
+(64, 'salade', 'salade avec champignon', 1),
+(65, 'tiramisu', 'ceci est un tiramisu', 4),
+(66, 'assiete de charcuterie', 'assortiment de charcuterie', 3),
+(67, 'assiete de charcuterie', 'assortiment de charcuterie', 3);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -98,6 +111,12 @@ ALTER TABLE `admin`
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `configuration`
+--
+ALTER TABLE `configuration`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -115,13 +134,19 @@ ALTER TABLE `dishes`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `configuration`
+--
+ALTER TABLE `configuration`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `dishes`
 --
 ALTER TABLE `dishes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- Constraints for dumped tables

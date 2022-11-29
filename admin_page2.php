@@ -1,11 +1,19 @@
 <?php
-
-session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 require_once "./inc/functionDb.php";
 
+session_start();
 
-if(isset($_POST) && isDisheValid($_POST)) {
+if ($_SESSION['connected'] != true) {
+    header('location:admin_connection.php');
+    exit();
+}
+
+
+if (isset($_POST) && isDisheValid($_POST)) {
 
         $title = htmlspecialchars($_POST["title"]);
         $description = htmlspecialchars($_POST["description"]);
@@ -13,6 +21,32 @@ if(isset($_POST) && isDisheValid($_POST)) {
 
         addDisheToDb($title, $description, $category_id);
 }
+
+try {
+    if (isset($_POST['envoie_bio/address'])) {
+
+        // $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+        $_SESSION['bio'] = nl2br(htmlspecialchars($_POST['bio']));
+        $_SESSION['address'] = htmlspecialchars($_POST['address']);
+
+        if (!empty($_POST['bio']) && !empty($_POST['address'])) {
+
+            $insertText = $pdo->prepare("INSERT INTO configuration(bio, address) VALUES (?, ?)");
+            $insertText->execute(
+                array(
+                    $_SESSION['bio'],
+                    $_SESSION['address']
+                )
+            );
+
+            $successMessage = "La bio et l'adresse ont bien été saisi !";
+        } else {
+            $errorMessage = "Veuillez remplir tous les champs...";
+        };
+    }
+} catch (PDOException $e) {
+    echo "Error : " . $e->getMessage();
+};
 ?>
 
 <!DOCTYPE html>
@@ -47,14 +81,26 @@ if(isset($_POST) && isDisheValid($_POST)) {
     
 </head>
 
+                        <!-- // ---- App Body ---- // -->
+
 <body id="admin_page_body">
     <main id="admin_page_main">
 
 <!-- // ---- Config section ---- // -->
 
         <section class="admin_page_section" id="config_section">
+        <a id="" href="admin_deconnection.php">Se déconnecter</a>
             <h1 id="admin_page_h1">Page Administrateur</h1>
+            <p id="">Sur cette page il vous est possible de voir les contenus modifiables de votre site, et
             <h2 id="config_h2" class="m_h2">Editez votre description et votre adresse !</h2>
+
+            <button id="disheCreation_btn" class="disheCreation_classBtn">
+                <a href="#" role="button" data-target="#configEdition_modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Modifiez votre description et votre adresse</a>
+            </button>
+
+
+            
+
         </section>
         
 <!-- // ---- Dishe creation section ---- // -->
@@ -167,7 +213,76 @@ if(isset($_POST) && isDisheValid($_POST)) {
                     </button>
                 </div>
             </div>
+        <button id="saveEdition_btn">Enregistrer les modifications</button>
+
         </section>
+
+
+<!-- // ---- configEdition modal  class "show" (e) /modal.js ---- // -->
+
+
+        <div class="adminPage_modal" id="configEdition_modal" role="dialog">
+            <div class="modal-content">
+            <div id="modal-first-menu" class="modal">
+                <div class="modal_content">
+                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea><br>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
+                    <button>Enregistrer</button>
+                    <a href="#" class="modal_close">&times;</a>
+                </div>
+            </div>
+                <button class="close" role="button" data-dismiss="dialog">x</button>
+                <h2 id="modal_h2">Modifiez vos informations</h2>
+                <form action="" method="POST">
+                    <label for="textarea">Description/Bio:</label>
+                    <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="5"></textarea><br><br>
+
+                    <label for="address">Adresse du restaurant:</label>
+                    <textarea placeholder="Entrer votre adresse" name="address" id="textarea" cols="30" rows="5"></textarea>
+
+                    <button name="envoie_bio/address">Enregistrer</button>
+
+                    <?php if (isset($errorMessage)) { ?>
+                        <div class="errors">
+                            <?= $errorMessage  ?>
+                        </div>
+                    <?php } elseif (isset($successMessage)) { ?>
+                        <div class="success">
+                            <?= $successMessage  ?>
+                        </div>
+                    <?php } ?>
+                </form>
+
+                <label id="label" for="textarea"></label>
+            <p id="bio-admin">
+                <?php
+                // $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+                // $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                // $executeIsOk = $pdoStat->execute();
+                // $biography = $pdoStat->fetch();
+                // $_SESSION['bio']=$biography;
+                // echo $biography[0];
+                ?>
+            </p>
+
+            <label id="label" for="address"></label>
+            <p id="address-admin">
+                <?php
+                // $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+                // $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                // $executeIsOk = $pdoStat->execute();
+                // $address = $pdoStat->fetch();
+                // $_SESSION['address']=$address;
+                // echo $address[0];
+                ?>
+
+            </p>
+                <div class="modalForm_div">
+                    <button type="submit" class="modal_sendBtn">Modifier</button>
+                </div>
+            </div>
+        </div>
 
 <!-- // ---- disheCreation modal  class "show" (e) /modal.js ---- // -->
                 
@@ -228,7 +343,7 @@ if(isset($_POST) && isDisheValid($_POST)) {
 						<th scope="col">catégorie</th>
 					</tr>
 
-                    <?php if();?>
+                    <?php //if();?>
                     <?php ;?>
                     <?php foreach ( $category as $key => $categories ): ?>
                                 <option value="<?php echo $categories['id'] ?>">
