@@ -83,15 +83,17 @@
 
                 .modal_sendBtn {
                     grid-column: 1/4;
-                    margin: 2rem 45% 0 45%;
+                    border: solid #333 2px;
+                    border-radius: 0.5rem;
+                    margin: 2rem 45% 2rem 45%;
                     padding: 0.5rem;
-                    color: #F5BB65;
-                    background-color: #3f546b;
-                    border-radius: 0.25rem;
+                    background-color: #333;
+                
+                    &:hover {
+                        background-color: seagreen;
+                    }
                 }
             }
-    
-            
         }
     }
 }

@@ -160,15 +160,9 @@ try {
 
         <section class="admin_page_section" id="menuEdition_section">
             <h2 class="m_h2">Editez vos menus !</h2>
-            <div id="editionDishe_container" >
+            <div id="editionDishe_container">
                 <div class="editionDishe_category"  id="disheCategory1">
                     <h3>Entrées</h3>
-                    <div class="dishes">
-                    </div>
-                    <div class="dishes">
-                    </div>
-                    <div class="dishes">
-                    </div>
                     <div class="dishes">
                     </div>
                     <button class="editionSection_classBtn">
@@ -180,17 +174,6 @@ try {
                     <h3>Plats</h3>
 
                     <div class="dishes">
-                        
-                    </div>
-
-                    <div class="dishes">
-                        
-                    </div>
-                    <div class="dishes">
-                        
-                    </div>
-                    <div class="dishes">
-                        
                     </div>
 
                     <button class="editionSection_classBtn">
@@ -202,17 +185,6 @@ try {
                     <h3>A partager</h3>
 
                     <div class="dishes">
-                        
-                    </div>
-
-                    <div class="dishes">
-                        
-                    </div>
-                    <div class="dishes">
-                        
-                    </div>
-                    <div class="dishes">
-                        
                     </div>
 
                     <button class="editionSection_classBtn">
@@ -224,26 +196,16 @@ try {
                     <h3>Desserts</h3>
 
                     <div class="dishes">
-                        
                     </div>
 
-                    <div class="dishes">
-                        
-                    </div>
-                    <div class="dishes">
-                        
-                    </div>
-                    <div class="dishes">
-                        
-                    </div>
-                    
                     <button class="editionSection_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal4" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les desserts</a>
                     </button>
                 </div>
             </div>
-        <button id="saveEdition_btn">Enregistrer les modifications</button>
-
+            <button id="saveEdition_btn">
+               <a href="">Enregistrer les modifications</a>
+            </button>
         </section>
 
 
@@ -252,25 +214,22 @@ try {
 
         <div class="adminPage_modal" id="configEdition_modal" role="dialog">
             <div class="modal-content">
-            <div id="modal-first-menu" class="modal">
-                <div class="modal_content">
-                    <!-- <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
-                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea><br>
-                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea> -->
-                    <!-- <button>Enregistrer</button> -->
-                </div>
-            </div>
+
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">Modifiez vos informations</h2>
+                <h2 class="modal_h2">Modifiez vos informations</h2>
+
                 <form action="" method="POST">
+
+                <div class="configModal_div">
                     <label for="textarea">Description/Bio:</label>
-                    <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="5"></textarea><br><br>
+                    <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="5"></textarea>
+                </div>
 
+                <div class="configModal_div">
                     <label for="address">Adresse du restaurant:</label>
-                    <textarea placeholder="Entrer votre adresse" name="address" id="textarea" cols="30" rows="5"></textarea>
-
-                    <button name="envoie_bio/address">Enregistrer</button>
-
+                    <input placeholder="Entrer votre adresse" name="address" id="input" cols="30" rows="5"></input>
+                </div>
+                <button id="config_btn"  name="envoie_bio/address">Enregistrer</button>
                     <?php if (isset($errorMessage)) { ?>
                         <div class="errors">
                             <?= $errorMessage  ?>
@@ -281,13 +240,6 @@ try {
                         </div>
                     <?php } ?>
                 </form>
-
-                <label id="label" for="textarea"></label>
-
-            
-                <div class="modalForm_div">
-                    <!-- <button type="submit" class="modal_sendBtn">Modifier</button> -->
-                </div>
             </div>
         </div>
 
@@ -296,7 +248,7 @@ try {
         <div class="adminPage_modal" id="disheCreationModal" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">Fonctionalité de création de plat</h2>
+                <h2 class="modal_h2">Fonctionalité de création de plat</h2>
 
                 <form action="./admin_page2.php" method="POST" id="disheCreationForm" class="modal_form">
                     <p class="modal_redStar_message">Les champs avec une étoiles rouges (*) sont obligatoires.</p>
@@ -340,7 +292,7 @@ try {
         <div class="adminPage_modal" id="disheListModal" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">Voici la liste des plats enregistrés en base de donnée</h2>
+                <h2 class="modal_h2">Voici la liste des plats enregistrés en base de donnée</h2>
                 <?php require_once "inc/menu_content.php" ;?>
             </div>
         </div>
@@ -351,7 +303,7 @@ try {
         <div class="adminPage_modal" id="disheEditionModal1" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">Les Entrées</h2>
+                <h2 class="modal_h2">Les Entrées</h2>
                 <div class="modalForm_div">
                     <button type="submit" class="modal_sendBtn"></button>
                 </div>
@@ -364,7 +316,7 @@ try {
         <div class="adminPage_modal" id="disheEditionModal2" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">Les Plats</h2>
+                <h2 class="modal_h2">Les Plats</h2>
                 <div class="modalForm_div">
                     <button type="submit" class="modal_sendBtn"></button>
                 </div>
@@ -377,7 +329,7 @@ try {
         <div class="adminPage_modal" id="disheEditionModal3" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">Les plats a partager</h2>
+                <h2 class="modal_h2">Les plats a partager</h2>
                 <div class="modalForm_div">
                     <button type="submit" class="modal_sendBtn"></button>
                 </div>
@@ -390,7 +342,7 @@ try {
         <div class="adminPage_modal" id="disheEditionModal4" role="dialog">
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
-                <h2 id="modal_h2">les Desserts</h2>
+                <h2 class="modal_h2">les Desserts</h2>
                 <div class="modalForm_div">
                     <button type="submit" class="modal_sendBtn"></button>
                 </div>

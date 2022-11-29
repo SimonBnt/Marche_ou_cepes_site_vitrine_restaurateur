@@ -1,3 +1,12 @@
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once "./inc/functionDb.php";
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -70,9 +79,25 @@
             </div>
             <h1 class="relative_element_homesection">Venez gouter nos spécialités à base champignon !</h1>
             <h2 class="relative_element_homesection">Qui sommes nous ?</h2>
-            <p class="relative_element_homesection" id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit voluptas ipsa atque eaque facere tempora assumenda cupiditate optio ea, dolorum adipisci et quisquam tempore sapiente qui molestiae aliquam facilis rem repellendus vitae maxime animi. Facilis. </p>
+            <p class="relative_element_homesection" id="bio">
+                <?php
+                $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                $executeIsOk = $pdoStat->execute();
+                $biography = $pdoStat->fetch();
+                $_SESSION['bio']=$biography;
+                echo $biography[0];
+                ?>
+            </p>
             <h2 class="relative_element_homesection">Adresse</h2>
-            <p id="adresse" class="relative_element_homesection">7 Rue de la Fontaine Pinot </p>
+            <p id="adresse" class="relative_element_homesection">
+            <?php
+                $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                $executeIsOk = $pdoStat->execute();
+                $address = $pdoStat->fetch();
+                $_SESSION['address']=$address;
+                echo $address[0];
+            ?>
+            </p>
             <button id="cta" class="relative_element_homesection">
                 <a href="#map" title="lien d'accès rapide au formulaire de contact">Cliquez-ici pour réserver</a>
             </button>

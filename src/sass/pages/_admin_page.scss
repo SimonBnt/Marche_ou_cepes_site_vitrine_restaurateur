@@ -5,31 +5,83 @@
         height: 100vh;
         @include grid(1fr, 1fr 1fr 1fr 1fr 1fr);
     
-            #deconnection_btnDiv {
-                padding-left:  1.5rem;
-                text-align: start !important;
+        #deconnection_btnDiv {
+            padding-left:  1.5rem;
+            text-align: start !important;
 
-                button {
-                    border: solid #333 2px;
-                    border-radius: 0.5rem;
-                    padding: 0.5rem;
-                    background-color: #333;
-                    margin-top: 1rem;
+            button {
+                border: solid #333 2px;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                background-color: #333;
+                margin-top: 1rem;
+                
+                &:hover {
+                    background-color: aliceblue;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: #fcb64e;
                     
                     &:hover {
-                        background-color: aliceblue;
-                    }
-                    
-                    a {
-                        text-decoration: none;
-                        color: #fcb64e;
-                        
-                        &:hover {
-                            cursor: pointer;
-                        }
+                        cursor: pointer;
                     }
                 }
             }
+        }
+
+        .adminPage_modal {
+
+            .close {
+                border-radius: 0.25rem;
+                padding: 0.5rem;
+                background-color: aliceblue;
+
+                &:hover {
+                    background-color: indianred;
+                }
+            }
+
+            .configModal_div {
+                margin-bottom: 2rem;
+                
+                label {
+                    margin-right: 2rem;
+                    color: #333;
+                    font-size: 1.5rem;
+                }
+                
+                textarea {
+                    height: 1rem;
+                    border: solid #333 2px;
+                    border-radius: 0.25rem;
+                    padding: 0.5em 1rem 0.5rem 1rem;
+                }
+                
+                input {
+                    border: solid #333 2px;
+                    border-radius: 0.25rem;
+                    padding: 0.5em 1rem 0.5rem 1rem;
+                }
+            }
+
+            #config_btn {
+                border: solid #333 2px;
+                border-radius: 0.5rem;
+                padding: 0.5rem;
+                background-color: #333;
+                margin-top: 1rem;
+                
+                &:hover {
+                    background-color: seagreen;
+                }
+            }
+
+
+        }
+
+
         
         .admin_page_section {
             
@@ -219,6 +271,27 @@
                         }
                     }
                 }  
+            }
+
+            #saveEdition_btn {
+                border: solid #333 2px;
+                border-radius: 0.5rem;
+                margin-bottom: 2rem;
+                padding: 0.5rem;
+                background-color: #333;
+                
+                &:hover {
+                    background-color: aliceblue;
+                }
+                
+                a {
+                    text-decoration: none;
+                    color: #fcb64e;
+                    
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }
