@@ -1,5 +1,5 @@
 <?php 
     session_start();
     session_destroy();
-    header("location: admin_connexion.php");
+    header("location:admin_connection.php");
 ?> 

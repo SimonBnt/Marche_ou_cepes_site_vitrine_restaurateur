@@ -17,7 +17,7 @@ const validateFirstName = () => {
         firstNameError.innerHTML = "Un prénom complet est nécéssaire"
         return false
     }
-    if(!firstName.value.match(/^[A-Za-z]*$/)) {
+    if(!firstName.value.match(/^[A-Za-z_ ]*$/)) {
         firstNameError.innerHTML = "Votre prénom ne doit contenir que des lettres"
         return false
     }
@@ -30,7 +30,7 @@ const validateLastName = () => {
         lastNameError.innerHTML = "Un nom complet est nécéssaire"
         return false
     }
-    if(!lastName.value.match(/^[A-Za-z]*$/)) {
+    if(!lastName.value.match(/^[A-Za-z_ ]*$/)) {
         lastNameError.innerHTML = "Votre nom ne doit contenir que des lettres"
         return false
     }
@@ -56,7 +56,7 @@ const validateMessage = () => {
         messageError.innerHTML = "Un message nous est nécessaire pour comprendre votre besoin"
         return false
     }
-    if(!textArea.value.match(/^[A-Za-z]*[0-9]*$/)) {
+    if(!textArea.value.match(/^[A-Za-z_ ]*[0-9_ ]*$/)) {
         messageError.innerHTML = "Votre message ne doit contenir que des lettres et des chiffres"
         return false
     }
