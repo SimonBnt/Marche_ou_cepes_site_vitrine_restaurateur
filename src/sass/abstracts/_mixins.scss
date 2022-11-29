@@ -7,23 +7,24 @@
 @mixin grid($column, $rows) {
     display: grid;
     align-items: center;
+    justify-content: center;
     grid-template-columns: $column;
     grid-template-rows: $rows;
 }
 
 @mixin respondTo($breakpoint) {
-    @if ($breakpoint == mobile) {
+    @if ($breakpoint == sm) {
         @media (min-width: 768px) {
             @content;
         }
     }
-    @if ($breakpoint == tablette) {
-        @media (min-width: 1200px) {
+    @if ($breakpoint == md) {
+        @media (min-width: 1025px) {
             @content;
         }
     }
-    @if ($breakpoint == desktop) {
-        @media (min-width: 1200px) {
+    @if ($breakpoint == lg) {
+        @media (min-width: 1224px) {
             @content;
         }
     }

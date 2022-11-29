@@ -1,9 +1,9 @@
-@import "layout/default", "layout/header", "layout/main", "layout/footer";
+@import "abstracts/variables", "abstracts/mixins";
 
 @import "base/reset";
 
-@import "abstracts/variables", "abstracts/mixins";
+@import "layout/default", "layout/header", "layout/main", "layout/footer";
 
-@import "components/buttons", "components/contact-form", "components/home", "components/menu";
+@import "components/contact-form", "components/home", "components/menu", "components/map", "components/navbar", "components/menu-burger", "components/modal";
 
-@import "pages/admin_connexion.scss", "pages/user_page.scss", "pages/admin_page.scss";
+@import "pages/admin_connexion", "pages/admin_page", "pages/legalmention";

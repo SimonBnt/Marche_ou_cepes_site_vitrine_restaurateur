@@ -1,0 +1,13 @@
+header {
+    
+    p {
+        color:#F5BB65;
+        background-color: #333;
+        padding: 1rem;
+        font-size: 1.25rem;
+        
+        @include respondTo(sm) {
+            display: none;
+        }
+    }
+}

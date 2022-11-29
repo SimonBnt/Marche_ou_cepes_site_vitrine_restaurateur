@@ -1,37 +1,158 @@
 #menu {
-    h2 {
-        padding: 1rem;
-    }
-}
-div#menu_grid {
-    @include grid(repeat(1fr, 2), repeat(1fr, 2));
-
-    .padding {
-        padding: 1rem;
-    }
-    #top_left {
-        grid-column: 1/2;
-        grid-row: 1/2;
-        
-    }
-    #top_right {
-        grid-column: 2/2;
-        grid-row: 1/2;
-    }
-    #bottom_left {
-        grid-column: 1/2;
-        grid-row: 2/2;
-    }
-    #bottom_right {
-        grid-column: 2/2;
-        grid-row: 2/2;
-    }
-    p.align-start{
-        text-align: start;
-        padding-top: 0.5rem;
-    }
-    h3 {
-        text-decoration: underline;
-    }
+    @include flex($justify: center);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1c2631;
+    background: linear-gradient(#FCF5E5, white);
     
+    h2 {
+        font-size: 2rem;
+        margin: 1rem 0 2rem 0;
+        
+        @include respondTo(sm) {
+            font-size: 2.5rem;
+        }
+        
+        @include respondTo(md) {
+            font-size: 3rem;
+        }
+    }
+
+    #dishe_container {
+        
+        @include respondTo(sm) {
+            @include grid(1fr 1fr, 1fr 1fr);
+            gap: 2rem;
+            
+            @include respondTo(md) {
+                gap: 4rem;
+            }
+        }
+
+        #category1 {
+            position: relative;
+        }
+
+        #category1::before {
+            background-image: url("./../img/c_panier_table.jpg");
+            content: "";
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            border-radius: 0.5rem;
+            opacity: 0.2;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        #category3 {
+            position: relative;
+        }
+
+        #category3::before {
+            background-image: url("./../img/p_cuisine.jpg");
+            content: "";
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            border-radius: 0.5rem;
+            opacity: 0.2;
+            top: 0px;
+            right: 0px;
+            left: 0px;
+            bottom: 0px;
+        }
+
+        @include respondTo(sm) {
+
+            #category3::before {
+                background-image: none;
+            }
+            
+            #category4 {
+                position: relative;
+            }
+    
+            #category4::before {
+                background-image: url("./../img/p_cuisine.jpg");
+                content: "";
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                position: absolute;
+                border-radius: 0.5rem;
+                opacity: 0.2;
+                top: 0px;
+                right: 0px;
+                left: 0px;
+                bottom: 0px;
+            }
+
+        }
+        
+        .dishe_category {
+            background-color: #FFF5EE;
+            margin: 0 4rem 1rem 4rem;
+            border: solid #333 2px;
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
+            padding: 1rem 0.5rem 0.75rem 0.5rem;
+            border-radius: 0.5rem;
+            
+            @include respondTo(sm) {
+                margin: 0 4rem 2rem 4rem;
+            }
+
+            @include respondTo(md) {
+                padding: 2rem 8rem 2rem 8rem;
+            }
+
+            h3 {
+                color: #f7a833;
+                margin-bottom: 1rem;
+                text-decoration: underline;
+                font-size: 2rem;
+        
+                @include respondTo(sm) {
+                    font-size: 1.75rem;
+                }
+                
+                @include respondTo(md) {
+                    font-size: 2.5rem;
+                }
+            }
+            
+            .dishes {
+                padding: 1rem;
+                position: relative;
+
+                #dishes_p {
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-style: italic;
+                }
+
+                .align-start{
+                    color: #1c2631;
+                    text-align: start;
+                    padding-top: 0.5rem;
+                    font-size: 1.25rem;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    text-decoration: underline;
+                    
+                    @include respondTo(sm) {
+                        font-size: 1.5rem;
+                    }
+        
+                    @include respondTo(md) {
+                        font-size: 1.75rem;
+                    }
+                }
+            }
+        }
+    }
 }
