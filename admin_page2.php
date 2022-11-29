@@ -85,22 +85,58 @@ try {
 
 <body id="admin_page_body">
     <main id="admin_page_main">
-
-<!-- // ---- Config section ---- // -->
-
-        <section class="admin_page_section" id="config_section">
-        <a id="" href="admin_deconnection.php">Se déconnecter</a>
-            <h1 id="admin_page_h1">Page Administrateur</h1>
-            <p id="">Sur cette page il vous est possible de voir les contenus modifiables de votre site, et
-            <h2 id="config_h2" class="m_h2">Editez votre description et votre adresse !</h2>
-
-            <button id="disheCreation_btn" class="disheCreation_classBtn">
-                <a href="#" role="button" data-target="#configEdition_modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Modifiez votre description et votre adresse</a>
+        
+    <!-- // ---- Deconnexion button---- // -->
+        
+        <div id="deconnection_btnDiv">
+            <button>
+                <a id="" href="admin_deconnection.php">Se déconnecter</a>
             </button>
+        </div>
+        
+<!-- // ---- Config section ---- // -->
+        <section class="admin_page_section" id="config_section">
+            <div id="configSectionHead_div">
+                <h1 id="admin_page_h1">Page Administrateur</h1>
+                <p id="admin_page_p">Cette page vous permet de voir les contenus éditables de votre site, et de les modifier à votre guise.
+                <h2 id="config_h2" class="m_h2">Editez votre description et votre adresse !</h2>
+            </div>
 
+            <div id="returnedConfig_divG">    
+                <div class="returnedConfig_div">    
+                    <label class="returnedConfig_label" for="description/bio">Description/Bio :</label>
+                    <p class="returnedConfig_p">
+                        <?php
+                        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+                        $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                        $executeIsOk = $pdoStat->execute();
+                        $biography = $pdoStat->fetch();
+                        $_SESSION['bio']=$biography;
+                        echo $biography[0];
+                        ?>
+                    </p>
+                </div>
 
-            
-
+    <!-- // ---- configSection modal button  ---- // -->
+                    
+                <button id="configSection_btn">
+                    <a href="#" role="button" data-target="#configEdition_modal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Modifiez votre description et votre adresse</a>
+                </button>
+                
+                <div class="returnedConfig_div">    
+                    <label class="returnedConfig_label" for="address"></label>
+                    <p class="returnedConfig_p">
+                        <?php
+                        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+                        $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                        $executeIsOk = $pdoStat->execute();
+                        $address = $pdoStat->fetch();
+                        $_SESSION['address']=$address;
+                        echo $address[0];
+                        ?>
+                    </p>
+                </div>
+            </div>
         </section>
         
 <!-- // ---- Dishe creation section ---- // -->
@@ -110,12 +146,13 @@ try {
                 <h2 id="disheCreation_h2" class="m_h2">Créez vos plat !</h2>
                 <p id="creation_info" class="m_p">Grâce à cette fonctionnalité, vous avez la possibilité de créer des plats et les ajouter à votre base de donnée.</p>
                 
-<!-- // ---- disheCreation modal button  ---- // -->
-                
-                <button id="disheCreation_btn" class="disheCreation_classBtn">
+    <!-- // ---- disheCreation modal button  ---- // -->
+                <label for="" class="disheCreation_btnLabel">Bouton 1 :</label>
+                <button id="disheCreation_btn1" class="disheCreation_classBtn">
                     <a href="#" role="button" data-target="#disheCreationModal" data-toggle="modal" title="Cliquez-ici pour créer un plat" class="btn">Créez un plat</a>
                 </button>
 
+                <label for="" class="disheCreation_btnLabel">Bouton 2 :</label>
                 <button class="disheCreation_classBtn">
                     <a href="#" role="button" data-target="#disheListModal" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Voir la liste des plats</a>
                 </button>
@@ -142,7 +179,7 @@ try {
                     </div>
                     <div class="dishes">
                     </div>
-                    <button class="admin_page_classBtn">
+                    <button class="editionSection_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal1" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les entrées</a>
                     </button>
                 </div>
@@ -164,7 +201,7 @@ try {
                         
                     </div>
 
-                    <button class="admin_page_classBtn">
+                    <button class="editionSection_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal2" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les plats</a>
                     </button>
                 </div>
@@ -186,7 +223,7 @@ try {
                         
                     </div>
 
-                    <button class="admin_page_classBtn">
+                    <button class="editionSection_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal3" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les plats a partager</a>
                     </button>
                 </div>
@@ -208,7 +245,7 @@ try {
                         
                     </div>
                     
-                    <button class="admin_page_classBtn">
+                    <button class="editionSection_classBtn">
                         <a href="#" role="button" data-target="#disheEditionModal4" data-toggle="modal" title="Cliquez-ici pour acceder à la liste des plats" class="btn">Editer les desserts</a>
                     </button>
                 </div>
@@ -255,30 +292,7 @@ try {
 
                 <label id="label" for="textarea"></label>
 
-            <div></div>    
-            <p id="bio-admin">
-                <?php
-                $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
-                $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                $executeIsOk = $pdoStat->execute();
-                $biography = $pdoStat->fetch();
-                $_SESSION['bio']=$biography;
-                echo $biography[0];
-                ?>
-            </p>
-
-            <label id="label" for="address"></label>
-            <p id="address-admin">
-                <?php
-                $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
-                $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                $executeIsOk = $pdoStat->execute();
-                $address = $pdoStat->fetch();
-                $_SESSION['address']=$address;
-                echo $address[0];
-                ?>
-
-            </p>
+            
                 <div class="modalForm_div">
                     <!-- <button type="submit" class="modal_sendBtn">Modifier</button> -->
                 </div>
