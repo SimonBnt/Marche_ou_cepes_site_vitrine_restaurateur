@@ -95,56 +95,62 @@
 
         }
         
-
         .dishe_category {
             background-color: #FFF5EE;
-            margin-bottom: 1rem;
+            margin: 0 4rem 1rem 4rem;
             border: solid #333 2px;
             box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.5);
-            padding: 1rem 2rem 0.5rem 2rem;
+            padding: 1rem 0.5rem 0.75rem 0.5rem;
             border-radius: 0.5rem;
             
             @include respondTo(sm) {
-                padding: 1rem 6rem 0.5rem 6rem;
-                margin-bottom: 2rem;
+                margin: 0 4rem 2rem 4rem;
             }
 
             @include respondTo(md) {
                 padding: 2rem 8rem 2rem 8rem;
             }
-            
-            .dishes {
-                padding: 1rem;
-                position: relative;
-            }
-    
-            p.align-start{
-                color: #1c2631;
-                text-align: start;
-                padding-top: 0.5rem;
-                font-size: 1.25rem;
-                
-                @include respondTo(sm) {
-                    font-size: 1.5rem;
-                }
-    
-                @include respondTo(md) {
-                    font-size: 1.75rem;
-                }
-            }
-    
+
             h3 {
                 color: #f7a833;
                 margin-bottom: 1rem;
                 text-decoration: underline;
-                font-size: 1.5rem;
+                font-size: 2rem;
         
                 @include respondTo(sm) {
                     font-size: 1.75rem;
                 }
                 
                 @include respondTo(md) {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
+                }
+            }
+            
+            .dishes {
+                padding: 1rem;
+                position: relative;
+
+                #dishes_p {
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-style: italic;
+                }
+
+                .align-start{
+                    color: #1c2631;
+                    text-align: start;
+                    padding-top: 0.5rem;
+                    font-size: 1.25rem;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    text-decoration: underline;
+                    
+                    @include respondTo(sm) {
+                        font-size: 1.5rem;
+                    }
+        
+                    @include respondTo(md) {
+                        font-size: 1.75rem;
+                    }
                 }
             }
         }

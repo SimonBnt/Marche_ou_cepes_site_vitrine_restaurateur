@@ -1,28 +1,27 @@
 <?php
 session_start();
 
-require_once "configDb.php";
+require_once "./inc/configDb.php";
 
 $message = "";
 
-// if (isset($_POST['submit'])) {
-//     if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
-//     try {
-//         $pdo;
-//     } catch (PDOException $e) {
-//         echo "Error : " . $e->getMessage();
-//     }
-//     $res = $pdo->prepare("SELECT * FROM admin WHERE login=? and password=?");
-//     $res->setFetchMode(PDO::FETCH_ASSOC);
-//     $res->execute(array($_POST['login'], md5($_POST['password'])));
-//     $tab = $res->fetchAll();
-//     if (count($tab) == 0) {
-//     } else {
-//         $_SESSION['connected'] = true;
-//         header("location:admin_page2.php");
-//     }
-// }
-
+if (isset($_POST['submit'])) {
+    if (empty($_POST['login']) || ($_POST['password'])) $message = "Mauvais Login ou Mot de passe";
+    try {
+        $pdo;
+    } catch (PDOException $e) {
+        echo "Error : " . $e->getMessage();
+    }
+    $res = $pdo->prepare("SELECT * FROM admin WHERE login=? and password=?");
+    $res->setFetchMode(PDO::FETCH_ASSOC);
+    $res->execute(array($_POST['login'], md5($_POST['password'])));
+    $tab = $res->fetchAll();
+    if (count($tab) == 0) {
+    } else {
+        $_SESSION['connected'] = true;
+        header("location:admin_page2.php");
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +36,6 @@ $message = "";
 </head>
 
 <body id="body">
-    <!-- <img class="background_admin" src="./assets/img/plat-1.jpg" alt="image d'arrière plan représentant un plan à base de champignons"> -->
     <div class="form">
         <form method="POST" action="">
             <div>

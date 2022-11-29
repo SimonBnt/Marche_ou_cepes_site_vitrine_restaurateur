@@ -8,10 +8,9 @@ require_once "./inc/functionDb.php";
 session_start();
 
 if ($_SESSION['connected'] != true) {
-    header('location:admin_connection.php');
+    header("location:admin_connection.php");
     exit();
 }
-
 
 if (isset($_POST) && isDisheValid($_POST)) {
 
@@ -25,7 +24,6 @@ if (isset($_POST) && isDisheValid($_POST)) {
 try {
     if (isset($_POST['envoie_bio/address'])) {
 
-        // $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
         $_SESSION['bio'] = nl2br(htmlspecialchars($_POST['bio']));
         $_SESSION['address'] = htmlspecialchars($_POST['address']);
 
@@ -96,10 +94,10 @@ try {
         
 <!-- // ---- Config section ---- // -->
         <section class="admin_page_section" id="config_section">
-            <div id="configSectionHead_div">
+            <div id="configSectionHead_div" class="">
                 <h1 id="admin_page_h1">Page Administrateur</h1>
                 <p id="admin_page_p">Cette page vous permet de voir les contenus éditables de votre site, et de les modifier à votre guise.
-                <h2 id="config_h2" class="m_h2">Editez votre description et votre adresse !</h2>
+                <h2 id="configSection_h2" class="m_h2">Editez votre description et votre adresse !</h2>
             </div>
 
             <div id="returnedConfig_divG">    
@@ -107,12 +105,11 @@ try {
                     <label class="returnedConfig_label" for="description/bio">Description/Bio :</label>
                     <p class="returnedConfig_p">
                         <?php
-                        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
-                        $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                        $executeIsOk = $pdoStat->execute();
-                        $biography = $pdoStat->fetch();
-                        $_SESSION['bio']=$biography;
-                        echo $biography[0];
+                        // $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                        // $executeIsOk = $pdoStat->execute();
+                        // $biography = $pdoStat->fetch();
+                        // $_SESSION['bio']=$biography;
+                        // echo $biography[0];
                         ?>
                     </p>
                 </div>
@@ -127,12 +124,11 @@ try {
                     <label class="returnedConfig_label" for="address"></label>
                     <p class="returnedConfig_p">
                         <?php
-                        $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
-                        $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                        $executeIsOk = $pdoStat->execute();
-                        $address = $pdoStat->fetch();
-                        $_SESSION['address']=$address;
-                        echo $address[0];
+                        // $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                        // $executeIsOk = $pdoStat->execute();
+                        // $address = $pdoStat->fetch();
+                        // $_SESSION['address']=$address;
+                        // echo $address[0];
                         ?>
                     </p>
                 </div>
