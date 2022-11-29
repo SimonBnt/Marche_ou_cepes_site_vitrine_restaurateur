@@ -1,13 +1,13 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+// ini_set("display_startup_errors", 1);
+// error_reporting(E_ALL);
 
 require_once "./inc/functionDb.php";
 
 session_start();
 
-if ($_SESSION['connected'] != true) {
+if ($_SESSION["connected"] != true) {
     header("location:admin_connection.php");
     exit();
 }
@@ -16,24 +16,25 @@ if (isset($_POST) && isDisheValid($_POST)) {
 
         $title = htmlspecialchars($_POST["title"]);
         $description = htmlspecialchars($_POST["description"]);
-        $category_id = htmlspecialchars($_POST["category_id"]);
+        $category = htmlspecialchars($_POST["setCategory"]);
 
-        addDisheToDb($title, $description, $category_id);
+        addDisheToDb($title, $description, $category);
+        
 }
 
 try {
-    if (isset($_POST['envoie_bio/address'])) {
+    if (isset($_POST["configSend_btn"])) {
 
-        $_SESSION['bio'] = nl2br(htmlspecialchars($_POST['bio']));
-        $_SESSION['address'] = htmlspecialchars($_POST['address']);
+        $_SESSION["bio"] = nl2br(htmlspecialchars($_POST["bio"]));
+        $_SESSION["address"] = htmlspecialchars($_POST["address"]);
 
-        if (!empty($_POST['bio']) && !empty($_POST['address'])) {
+        if (!empty($_POST["bio"]) && !empty($_POST["address"])) {
 
             $insertText = $pdo->prepare("INSERT INTO configuration(bio, address) VALUES (?, ?)");
             $insertText->execute(
                 array(
-                    $_SESSION['bio'],
-                    $_SESSION['address']
+                    $_SESSION["bio"],
+                    $_SESSION["address"]
                 )
             );
 
@@ -45,6 +46,7 @@ try {
 } catch (PDOException $e) {
     echo "Error : " . $e->getMessage();
 };
+
 ?>
 
 <!DOCTYPE html>
@@ -99,8 +101,17 @@ try {
 
 <!-- // ---- Config section ---- // -->
         <section class="admin_page_section" id="config_section">
-            <div id="returnedConfig_divG">    
+            <div id="returnedConfig_divG">
+            
                 <h2 id="configSection_h2" class="m_h2">Editez votre description et votre adresse !</h2>
+
+                <?php if(isset($_POST) && (isset($_POST["bio"]) && (isset($_POST["address"]) && !empty($_POST["bio"]) && !empty($_POST["address"])))) :?>
+                    <div id="succesConfigMessage">
+                        <p>Les modifications ont été faites avec succés.</p>    
+                         <p>Vous pouvez reprendre votre navigation</p>
+                    </div>
+                <?php endif ?>
+
                 <div class="returnedConfig_div">    
                     <label class="returnedConfig_label" for="description/bio">Description/Bio :</label>
                     <p class="returnedConfig_p">
@@ -108,14 +119,13 @@ try {
                         $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
                         $executeIsOk = $pdoStat->execute();
                         $biography = $pdoStat->fetch();
-                        $_SESSION['bio']=$biography;
+                        $_SESSION["bio"]=$biography;
                         echo $biography[0];
                         ?>
                     </p>
                 </div>
 
     <!-- // ---- configSection modal button  ---- // -->
-                    
     
                 <div class="returnedConfig_div">    
                     <label class="returnedConfig_label" for="address">Adresse du restaurant :</label>
@@ -124,7 +134,7 @@ try {
                         $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
                         $executeIsOk = $pdoStat->execute();
                         $address = $pdoStat->fetch();
-                        $_SESSION['address']=$address;
+                        $_SESSION["address"]=$address;
                         echo $address[0];
                         ?>
                     </p>
@@ -141,6 +151,14 @@ try {
         <section class="admin_page_section" id="disheCreation_section">
             <div class="admin_page_div" id="disheCreation_div">    
                 <h2 id="disheCreation_h2" class="m_h2">Créez vos plat !</h2>
+
+                <?php if(isset($_POST) && (isset($_POST["title"]) && (isset($_POST["description"]) && (isset($_POST["setCategory"]) && !empty($_POST["title"]) && !empty($_POST["description"]) && !empty($_POST["setCategory"]))))) :?>
+                    <div id="succesDisheCreationMessage">
+                        <p class="succesDisheMessage">Le plat a été créé avec succés.</p>    
+                        <p class="succesDisheMessage" id="succesDisheMessage2">Vous pouvez reprendre votre navigation</p>
+                    </div>
+                <?php endif ?>
+
                 <p id="creation_info" class="m_p">Grâce à cette fonctionnalité, vous avez la possibilité de créer des plats et les ajouter à votre base de donnée.</p>
                 
     <!-- // ---- disheCreation modal button  ---- // -->
@@ -218,27 +236,18 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 class="modal_h2">Modifiez vos informations</h2>
 
-                <form action="" method="POST">
+                <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
 
-                <div class="configModal_div">
-                    <label for="textarea">Description/Bio:</label>
-                    <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="5"></textarea>
-                </div>
+                    <div class="configModal_div">
+                        <label for="textarea">Description/Bio:</label>
+                        <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="5"><?= (isset($_POST["bio"])) ? $_POST["bio"] : "" ?></textarea>
+                    </div>
 
-                <div class="configModal_div">
-                    <label for="address">Adresse du restaurant:</label>
-                    <input placeholder="Entrer votre adresse" name="address" id="input" cols="30" rows="5"></input>
-                </div>
-                <button id="config_btn"  name="envoie_bio/address">Enregistrer</button>
-                    <?php if (isset($errorMessage)) { ?>
-                        <div class="errors">
-                            <?= $errorMessage  ?>
-                        </div>
-                    <?php } elseif (isset($successMessage)) { ?>
-                        <div class="success">
-                            <?= $successMessage  ?>
-                        </div>
-                    <?php } ?>
+                    <div class="configModal_div">
+                        <label for="address">Adresse du restaurant:</label>
+                        <input placeholder="Entrer votre adresse" name="address" id="input" cols="30" rows="5" value="<?= (isset($_POST["address"])) ? $_POST["address"] : "" ?>">
+                    </div>
+                    <button id="config_btn" name="configSend_btn">Enregistrer</button>
                 </form>
             </div>
         </div>
@@ -250,7 +259,7 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 class="modal_h2">Fonctionalité de création de plat</h2>
 
-                <form action="./admin_page2.php" method="POST" id="disheCreationForm" class="modal_form">
+                <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST" id="disheCreationForm" class="modal_form">
                     <p class="modal_redStar_message">Les champs avec une étoiles rouges (*) sont obligatoires.</p>
                     <div class="modalForm_div" id="disheTitle_div">
                         <label for="disheTitle" class="modalForm_label">Titre du plat :</label>
@@ -270,9 +279,9 @@ try {
                         <select id="category_selector" name="setCategory" onkeyup="validateSelector()" required>
                         <option value="selectCategory">Sélectionez une catégorie</option>
                                 <?php foreach ( $category as $key => $categories ): ?>
-                                <option value="<?= $categories['id'] ?>">
-                                    <?= $categories['id'] ?> :
-                                    <?= $categories['name'] ?>
+                                <option value="<?= $categories["id"] ?>">
+                                    <?= $categories["id"] ?> :
+                                    <?= $categories["name"] ?>
                                 </option>
                                 <?php endforeach ; ?>
                         </select>
