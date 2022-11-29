@@ -225,11 +225,10 @@ try {
             <div class="modal-content">
             <div id="modal-first-menu" class="modal">
                 <div class="modal_content">
-                    <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
+                    <!-- <textarea placeholder="Entrer un Titre" name="" id="textarea" cols="30" rows="3"></textarea><br>
                     <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea><br>
-                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea>
-                    <button>Enregistrer</button>
-                    <a href="#" class="modal_close">&times;</a>
+                    <textarea placeholder="Entrer une Description" name="" id="textarea" cols="30" rows="3"></textarea> -->
+                    <!-- <button>Enregistrer</button> -->
                 </div>
             </div>
                 <button class="close" role="button" data-dismiss="dialog">x</button>
@@ -255,31 +254,33 @@ try {
                 </form>
 
                 <label id="label" for="textarea"></label>
+
+            <div></div>    
             <p id="bio-admin">
                 <?php
-                // $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
-                // $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                // $executeIsOk = $pdoStat->execute();
-                // $biography = $pdoStat->fetch();
-                // $_SESSION['bio']=$biography;
-                // echo $biography[0];
+                $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+                $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                $executeIsOk = $pdoStat->execute();
+                $biography = $pdoStat->fetch();
+                $_SESSION['bio']=$biography;
+                echo $biography[0];
                 ?>
             </p>
 
             <label id="label" for="address"></label>
             <p id="address-admin">
                 <?php
-                // $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
-                // $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                // $executeIsOk = $pdoStat->execute();
-                // $address = $pdoStat->fetch();
-                // $_SESSION['address']=$address;
-                // echo $address[0];
+                $pdo = new PDO('mysql:host=localhost;dbname=marche_ou_cepes', 'root', 'root');
+                $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                $executeIsOk = $pdoStat->execute();
+                $address = $pdoStat->fetch();
+                $_SESSION['address']=$address;
+                echo $address[0];
                 ?>
 
             </p>
                 <div class="modalForm_div">
-                    <button type="submit" class="modal_sendBtn">Modifier</button>
+                    <!-- <button type="submit" class="modal_sendBtn">Modifier</button> -->
                 </div>
             </div>
         </div>
