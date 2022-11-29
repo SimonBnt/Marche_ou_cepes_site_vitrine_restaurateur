@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
     if (count($tab) == 0) {
     } else {
         $_SESSION['connected'] = true;
-        header("location:admin_page2.php");
+        header("location:admin_page.php");
     }
 }
 ?>
