@@ -36,11 +36,9 @@ function addDisheToDb($title, $description, $category)
 		$stmt->bindParam(":description", $dishe["description"]);
 		$stmt->bindParam(":category", $dishe["category"]);
 		$stmt->execute();
-
 	} catch (PDOException $error) {
 		return [$error->getCode()];
 	}
-
 }
 
 function getDisheFromDb()
@@ -74,18 +72,16 @@ function getCategory()
 	}
 }
 
-
-
 // require_once "configDb.php";
 
 // function isDisheValid($dishe = array()) {
 //     if($dishe && count($dishe) 
 //         && array_key_exists("title", $dishe) 
-//             && array_key_exists("description", $dishe) 
-//                 && array_key_exists("category", $dishe)
-//                     && !empty($dishe["title"]) 
-//                         && !empty($dishe["description"]) 
-//                             && !empty($dishe["category"]))
+//         && array_key_exists("description", $dishe) 
+//         && array_key_exists("category", $dishe)
+//         && !empty($dishe["title"]) 
+//         && !empty($dishe["description"]) 
+//         && !empty($dishe["category"]))
 //     return true;
 // }
 
@@ -128,5 +124,3 @@ function getCategory()
 // 			return [$error->getCode()];
 // 	}
 // }
-
-

@@ -97,22 +97,23 @@ try {
             <div id="configSectionHead_div" class="">
                 <h1 id="admin_page_h1">Page Administrateur</h1>
                 <p id="admin_page_p">Cette page vous permet de voir les contenus éditables de votre site, et de les modifier à votre guise.
-                <h2 id="configSection_h2" class="m_h2">Editez votre description et votre adresse !</h2>
             </div>
-
+                    
             <div id="returnedConfig_divG">    
                 <div class="returnedConfig_div">    
+                    <h2 id="configSection_h2" class="m_h2">Editez votre description et votre adresse !</h2>
                     <label class="returnedConfig_label" for="description/bio">Description/Bio :</label>
                     <p class="returnedConfig_p">
                         <?php
-                        // $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                        // $executeIsOk = $pdoStat->execute();
-                        // $biography = $pdoStat->fetch();
-                        // $_SESSION['bio']=$biography;
-                        // echo $biography[0];
+                        $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                        $executeIsOk = $pdoStat->execute();
+                        $biography = $pdoStat->fetch();
+                        $_SESSION['bio']=$biography;
+                        echo $biography[0];
                         ?>
                     </p>
                 </div>
+            </div>
 
     <!-- // ---- configSection modal button  ---- // -->
                     
@@ -124,11 +125,11 @@ try {
                     <label class="returnedConfig_label" for="address"></label>
                     <p class="returnedConfig_p">
                         <?php
-                        // $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
-                        // $executeIsOk = $pdoStat->execute();
-                        // $address = $pdoStat->fetch();
-                        // $_SESSION['address']=$address;
-                        // echo $address[0];
+                        $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
+                        $executeIsOk = $pdoStat->execute();
+                        $address = $pdoStat->fetch();
+                        $_SESSION['address']=$address;
+                        echo $address[0];
                         ?>
                     </p>
                 </div>
@@ -163,11 +164,6 @@ try {
                 <div class="editionDishe_category"  id="disheCategory1">
                     <h3>Entrées</h3>
                     <div class="dishes">
-                        <?php //echo $get = getDisheFromDb() ;?>
-                        <?php //echo '<pre>';
-                        //var_dump($get);
-                        //echo '</pre>';
-                        //;?>
                     </div>
                     <div class="dishes">
                     </div>
@@ -322,9 +318,9 @@ try {
                         <select id="category_selector" name="setCategory" onkeyup="validateSelector()" required>
                         <option value="selectCategory">Sélectionez une catégorie</option>
                                 <?php foreach ( $category as $key => $categories ): ?>
-                                <option value="<?php echo $categories['id'] ?>">
-                                    <?php echo $categories['id'] ?> :
-                                    <?php echo $categories['name'] ?>
+                                <option value="<?= $categories['id'] ?>">
+                                    <?= $categories['id'] ?> :
+                                    <?= $categories['name'] ?>
                                 </option>
                                 <?php endforeach ; ?>
                         </select>
@@ -345,25 +341,7 @@ try {
             <div class="modal-content">
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Voici la liste des plats enregistrés en base de donnée</h2>
-
-                <table id="disheListTable">
-				<thead>
-					<tr>
-						<th scope="col">Titre du plat</th>
-						<th scope="col">Description du plat</th>
-						<th scope="col">catégorie</th>
-					</tr>
-
-                    <?php //if();?>
-                    <?php ;?>
-                    <?php foreach ( $category as $key => $categories ): ?>
-                                <option value="<?php echo $categories['id'] ?>">
-                                    <?php echo $categories['id'] ?> :
-                                    <?php echo $categories['name'] ?>
-                                </option>
-                                <?php endforeach ;?>
-				</thead>
-				<tbody>
+                <?php require_once "inc/menu_content.php" ;?>
             </div>
         </div>
 
@@ -375,7 +353,7 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Les Entrées</h2>
                 <div class="modalForm_div">
-                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                    <button type="submit" class="modal_sendBtn"></button>
                 </div>
             </div>
         </div>
@@ -388,7 +366,7 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Les Plats</h2>
                 <div class="modalForm_div">
-                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                    <button type="submit" class="modal_sendBtn"></button>
                 </div>
             </div>
         </div>
@@ -401,7 +379,7 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">Les plats a partager</h2>
                 <div class="modalForm_div">
-                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                    <button type="submit" class="modal_sendBtn"></button>
                 </div>
             </div>
         </div>
@@ -414,7 +392,7 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 id="modal_h2">les Desserts</h2>
                 <div class="modalForm_div">
-                    <button type="submit" class="modal_sendBtn">Créer le plat</button>
+                    <button type="submit" class="modal_sendBtn"></button>
                 </div>
             </div>
         </div>

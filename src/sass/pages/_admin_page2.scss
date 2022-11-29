@@ -14,6 +14,7 @@
                     border-radius: 0.5rem;
                     padding: 0.5rem;
                     background-color: #333;
+                    margin-top: 1rem;
                     
                     &:hover {
                         background-color: aliceblue;
@@ -34,11 +35,10 @@
             
             .admin_page_div {
                 padding: 4rem 0 4rem 0;
-                background-color: #3f546b;
                 
                 h2{
                     font-family: 'Dancing Script', cursive;
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                     color: #F5BB65;
                 }
                 
@@ -53,10 +53,12 @@
         #config_section {
 
             #configSectionHead_div {
+                background-color: #3f546b;
 
                 #admin_page_h1 {
                     font-size: 4rem;
-                    color: #3f546b;
+                    color: #F5BB65;
+                    // color: #3f546b;
                     margin-bottom: 2rem;
                 }
         
@@ -65,19 +67,25 @@
                     font-family: Georgia, 'Times New Roman', Times, serif;
                     margin-bottom: 1rem;
                 }
-                
-                #configSection_h2 {
-                    font-size: 1rem;
-                    margin-bottom: 1rem;
-                    color: #F5BB65;
+            }
+            #returnedConfig_divG {
+
+                #returnedConfig_div {
+
+                    #configSection_h2 {
+                        font-size: 2.5rem;
+                        margin-bottom: 1rem;
+                        color: #F5BB65;
+                    }
                 }
-                
             }
         }
         
         #disheCreation_section {
             border-top: solid #333 2px;
             border-bottom: solid #333 2px;
+            background-color: #3f546b;
+
 
             #disheCreation_h2 {
                 margin-bottom: 2rem;
@@ -116,7 +124,7 @@
         #menuEdition_section {
             h2{
                 font-family: 'Dancing Script', cursive;
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: #3f546b;
                 margin: 2rem 0 2rem 0;
             }

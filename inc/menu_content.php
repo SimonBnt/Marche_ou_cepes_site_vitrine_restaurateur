@@ -1,5 +1,5 @@
 <?php
-    require "functionDb.php";
+    require_once "functionDb.php";
 
     $returnedDishes = getDisheFromDb();
     $category = getCategory();
