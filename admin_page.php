@@ -107,13 +107,13 @@ try {
 
                 <?php if(isset($_POST) && (isset($_POST["bio"]) && (isset($_POST["address"]) && !empty($_POST["bio"]) && !empty($_POST["address"])))) :?>
                     <div id="succesConfigMessage">
-                        <p>Les modifications ont été faites avec succés.</p>    
-                         <p>Vous pouvez reprendre votre navigation</p>
+                        <p id="succesMessageConfig">Les modifications ont été faites avec succés.</p>    
+                        <p>Vous pouvez reprendre votre navigation</p>
                     </div>
                 <?php endif ?>
 
                 <div class="returnedConfig_div">    
-                    <label class="returnedConfig_label" for="description/bio">Description/Bio :</label>
+                    <label class="returnedConfig_label" for="description/bio">Description/Bio</label>
                     <p class="returnedConfig_p">
                         <?php
                         $pdoStat = $pdo->prepare(" SELECT bio FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
@@ -128,7 +128,7 @@ try {
     <!-- // ---- configSection modal button  ---- // -->
     
                 <div class="returnedConfig_div">    
-                    <label class="returnedConfig_label" for="address">Adresse du restaurant :</label>
+                    <label class="returnedConfig_label" for="address">Adresse du restaurant</label>
                     <p class="returnedConfig_p">
                         <?php
                         $pdoStat = $pdo->prepare(" SELECT address FROM configuration WHERE id = (SELECT MAX(id) FROM configuration) ");
@@ -154,7 +154,7 @@ try {
 
                 <?php if(isset($_POST) && (isset($_POST["title"]) && (isset($_POST["description"]) && (isset($_POST["setCategory"]) && !empty($_POST["title"]) && !empty($_POST["description"]) && !empty($_POST["setCategory"]))))) :?>
                     <div id="succesDisheCreationMessage">
-                        <p class="succesDisheMessage">Le plat a été créé avec succés.</p>    
+                        <p id="succesMessageDishe" class="succesDisheMessage">Le plat a été créé avec succés.</p>    
                         <p class="succesDisheMessage" id="succesDisheMessage2">Vous pouvez reprendre votre navigation</p>
                     </div>
                 <?php endif ?>
@@ -236,15 +236,15 @@ try {
                 <button class="close" role="button" data-dismiss="dialog">x</button>
                 <h2 class="modal_h2">Modifiez vos informations</h2>
 
-                <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
+                <form id="configEditionForm" action="<?= htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="POST">
 
                     <div class="configModal_div">
-                        <label for="textarea">Description/Bio:</label>
-                        <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="5"><?= (isset($_POST["bio"])) ? $_POST["bio"] : "" ?></textarea>
+                        <label for="textarea">Description/Bio :</label>
+                        <textarea placeholder="Entrer votre description" name="bio" id="textarea" cols="30" rows="100"><?= (isset($_POST["bio"])) ? $_POST["bio"] : "" ?></textarea>
                     </div>
 
                     <div class="configModal_div">
-                        <label for="address">Adresse du restaurant:</label>
+                        <label for="address">Adresse du restaurant :</label>
                         <input placeholder="Entrer votre adresse" name="address" id="input" cols="30" rows="5" value="<?= (isset($_POST["address"])) ? $_POST["address"] : "" ?>">
                     </div>
                     <button id="config_btn" name="configSend_btn">Enregistrer</button>

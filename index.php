@@ -49,7 +49,7 @@ require_once "./inc/functionDb.php";
     
     <nav id="navbar">
         
-            <a href="#home" title="lien d'accès rapide à l'acceuil"><i class="fa-solid fa-house"></i>Acceuil</a>
+            <a href="#home" title="lien d'accès rapide à l'acceuil"><i class="fa-solid fa-house"></i>Accueil</a>
             <a href="#menu" title="lien d'accès rapide au menu"><i class="fa-solid fa-utensils"></i>Menu</a>
             <a href="#contact_form" title="lien d'accès rapide au formulaire de contact"><i class="fa-solid fa-envelope"></i>Contact</a>
             <a href="#map" title="lien d'accès rapide à la carte interactive"><i class="fa-solid fa-map-location"></i>Adresse</a>
